@@ -6,3 +6,6 @@ def roll_dice():
     sum = d1 + d2
     print("You rolled " + str(sum))
     return sum
+
+def test():
+    print("Test conducted")
