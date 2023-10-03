@@ -9,3 +9,6 @@ def roll_dice():
 
 def test():
     print("Test conducted")
+
+def eat_apple()
+    print("Mmm apples.")
