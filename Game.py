@@ -1,0 +1,6 @@
+print("Welcome to [game name], a text-based RPG adventure game!")
+print("Your goal is to make a delivery to 123 Somewhere Street.")
+print("The way the game is played is through a dice roll. The challenge is described, the requirement,")
+print("and the game will roll two (2) standard six-sided dice, with a 1 face, 2, 3, 4, 5, and 6.")
+print("The two roles also have distinct stat distributions, ranging between -2, and +2.")
+print("This will either hinder, or improve your chances of completing each challenge.")
