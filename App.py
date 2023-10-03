@@ -1,3 +1,4 @@
+"""This module contains the application through which the player interacts with the game"""
 print("Welcome to [game name], a text-based RPG adventure game!")
 print("Your goal is to make a delivery to 123 Somewhere Street.")
 print("The way the game is played is through a dice roll, in which the game")
