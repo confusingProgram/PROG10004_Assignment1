@@ -1,7 +1,7 @@
 """This module contains Role 1, AKA the Pizza Driver, including the object class, its variables, and methods"""
 class Pizza:
     """This class contains the Pizza Driver object,  with the attributes Strength, Dexterity, and Charisma"""
-    def __init__(self, name, str, dex, chr):
+    def __init__(self, name):
         self.name = name
         self.str = 0
         self.dex = 0
