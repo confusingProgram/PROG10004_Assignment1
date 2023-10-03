@@ -16,13 +16,13 @@ print("")
 role = 0
 name = ""
 while True:
-    role = input("Please enter 1 for pizza delivery driver, or 2 for mail courier: ")
+    role = input("Please enter 1 for pizza driver, or 2 for mail courier: ")
     
     if role.isdigit(): #checks if role is a number
         role = int(role)
         if role == 1 or role == 2: #checks if role is 1 or 2
             if role == 1: #assigns name
-                name = "pizza delivery driver"
+                name = "pizza driver"
             else:
                 name = "mail courier"
             print("Great! You have chosen to play as the " +name +"!")
