@@ -1,6 +1,8 @@
 """This module contains the game logic like methods"""
 import random
 from Role1 import Pizza
+from Role2 import Mail
+
 
 def roll_dice():
     d1 = random.randint(1, 6)
@@ -64,4 +66,5 @@ def chapter_1_challenge(c1): #c1 is the character:
                 break # If user said yes, selection loop will exit.
         
         print("Let's get into the challenge.")
+
 

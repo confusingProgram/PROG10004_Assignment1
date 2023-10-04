@@ -6,11 +6,11 @@ class Mail:
         self._role = "mc"
         self._str = 1
         self._dex = -1
-        self._int = 1
+        self._iq = 1
     
     def __str__(self):
         """This method returns the string representation the object"""
-        return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._int} Intelligence)"
+        return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._iq} Intelligence)"
 
     def mod_stat(self, stat, inc):
         """This method changes the stat by the amount indicated"""
@@ -19,4 +19,4 @@ class Mail:
         elif stat == "dex":
             self._dex = self._dex + inc
         elif stat == "int":
-            self._Int = self._int + inc
+            self._iq = self._iq + inc
