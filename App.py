@@ -1,5 +1,6 @@
 """This module contains the application through which the player interacts with the game"""
 from Role1 import Pizza
+import Game
 # from Role2 import Mail
 
 print("Welcome to [game name], a text-based RPG adventure game!")
@@ -65,24 +66,9 @@ print("")
 
 if role == 1:
     c1 = Pizza(character_name)
-# else:
-    # c1 = 
-
-#Challenge 1, Pizza Driver
-if c1._role == "pd":
-    print('                                 *Chapter 1: The Pizza Shop*')
-    print('                                         *RING RING RING*                                ')
-    print('                                             *KERCHUNK*                                      ')
-    print('Boss: "Hello, welcome to Supernova Pizza, how can I help you?"')
-    print('''      "..Uh huh... Uh huh... Got it, we'll have your order there in no time. Goodbye."''')
-    print('                                             *KERCHUNK*                                      ')
-    print('Boss: "Alright ' + c1._name + ', we got a new order for 123 Somewhere Street."')
-    print('      "The order is 3 pepperoni pizzas, and 12 pc. wings. We have some already. Go load them into your car."')
-    print('      "You better show these customers that Supernova Pizza is the fastest restaurant around!"')
-    print('      "And no slacking! Last time, I had a customer complain that their pizza was so cold, it could cool their drinks!"')
+elif role == 2:
+    # c1 = Mail(character_name)
     print()
-    print('                                     Objective: Load the order')
-    print('Gee, he sure sounds angry!')
-    print('Now... how to load the pizzas into the car?')
-    print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss.""")
-    print("#######")
+
+Game.chapter_1_cutscene(c1)
+Game.chapter_1_challenge(c1)

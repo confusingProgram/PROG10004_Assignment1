@@ -10,7 +10,7 @@ class Pizza:
     
     def __str__(self):
         """This method returns the string representation the object"""
-        return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._chr} Charisma)"
+        return f"{self._name}: {self._str} Strength, {self._dex} Dexterity, {self._chr} Charisma)"
 
     def mod_stat(self, stat, inc):
         """This method changes the stat by the amount indicated"""
