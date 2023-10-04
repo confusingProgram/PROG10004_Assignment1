@@ -9,8 +9,10 @@ def roll_dice():
     print("You rolled " + str(sum))   
     return sum
 
+  
 #Chapter 1
 def chapter_1_cutscene(c1): #c1 is the character
+    """This method contains the game cutscene for Chapter 1 for both roles"""
     if c1._role == "pd": #Pizza Driver
         print('                                 *Chapter 1: The Pizza Shop*')
         print('                                         *RING RING RING*                                ')
@@ -62,4 +64,4 @@ def chapter_1_challenge(c1): #c1 is the character:
                 break # If user said yes, selection loop will exit.
         
         print("Let's get into the challenge.")
-            
+
