@@ -85,4 +85,4 @@ if c1._role == "pd":
     print('Gee, he sure sounds angry!')
     print('Now... how to load the pizzas into the car?')
     print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss.""")
-    
+    print("#######")
