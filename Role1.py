@@ -20,3 +20,4 @@ class Pizza:
             self._dex = self._dex + inc
         elif stat == "chr":
             self._chr = self._chr + inc
+
