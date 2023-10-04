@@ -47,7 +47,7 @@ def chapter_1_challenge(c1): #c1 is the character:
 
             while True: # Choosing options loop
                 option = input("Type in 1, 2, or 3: ")
-                if option == 1 or option == 2 or option == 3:
+                if option == "1" or option == "2" or option == "3":
                     break # If user selects a valid option, options loop will exit
                 else:
                     print("Error, invalid answer.")

@@ -24,28 +24,24 @@ choice = ""
 while True:
     role = input("Please enter 1 for pizza driver, or 2 for mail courier: ")
     
-    if role.isdigit(): #checks if role is a number
-        role = int(role)
-        if role == 1 or role == 2: #checks if role is 1 or 2
-            if role == 1: #assigns role_name
-                role_name = "pizza driver"
-            else:
-                role_name = "mail courier"
-            
-            while True:
-                choice = input("Are you sure you want to play as " +role_name + "? Yes or No: ")
-                if choice == "Yes" or choice == "No":
-                    break #exits the confirmation loop
-                else:
-                    print("Error, invalid answer.")
-
-            if choice == "Yes":
-                print("Great! You have chosen to play as the " +role_name +"!")
-                break #exits the role selection loop. Will only activate if role 1 or 2 is selected and "Yes" is selected
+    if role == "1" or role == "2": #checks if role is 1 or 2
+        if role == "1": #assigns role_name
+            role_name = "pizza driver"
         else:
-            print("Error, invalid answer.")
+            role_name = "mail courier"
+        
+        while True:
+            choice = input("Are you sure you want to play as " +role_name + "? Yes or No: ")
+            if choice == "Yes" or choice == "No":
+                break #exits the confirmation loop
+            else:
+                print("Error, invalid answer.")
+        if choice == "Yes":
+            print("Great! You have chosen to play as the " +role_name +"!")
+            break #exits the role selection loop. Will only activate if role 1 or 2 is selected and "Yes" is selected
     else:
         print("Error, invalid answer.")
+
 
 character_name = ""
 while True:
@@ -64,9 +60,9 @@ print("Let's begin the journey!")
 print("")
 
 
-if role == 1:
+if role == "1":
     c1 = Pizza(character_name)
-elif role == 2:
+elif role == "2":
     # c1 = Mail(character_name)
     print()
 
