@@ -9,3 +9,8 @@ def roll_dice():
     print("You rolled " + str(sum))   
     return sum
 
+
+import random
+from Role2 import Mail
+
+
