@@ -2,10 +2,10 @@
 import random
 from Role1 import Pizza
 
-def roll_dice():
+def roll_dice(stat): #stat = c1._str for example
     d1 = random.randint(1, 6)
     d2 = random.randint(1, 6)
-    sum = d1 + d2
+    sum = d1 + d2 + stat
     print("You rolled " + str(sum))   
     return sum
 
@@ -33,12 +33,12 @@ def chapter_1_cutscene(c1): #c1 is the character
         print("Nothing") # Where the cutscene for the mail courier will go.
 
 def chapter_1_challenge(c1): #c1 is the character:
-    if c1._role == "pd": #Pizza Driver
-        option = 0
+    if c1._role == "pd": #Challenge 1 for Pizza Driver
+        option = ""
         while True: # Selection loop
-            op1 = "carry pizzas to the car"
-            op2 = "use a cart to bring the pizzas"
-            op3 = "persuade your boss to carry them"
+            op1 = "carry pizzas to the car" # requires 6 strength, +1 strength if 11-12, -1 strength on loss if 2-3
+            op2 = "use a cart to bring the pizzas" # requires 4 dexterity to pass, +1 dexterity if 11-12, -1 charisma on loss if 2-3
+            op3 = "persuade your boss to carry them" # requires 8 charisma to pass, +1 charisma if 11-12, -1 charisma on loss if 3-4
             op = ""
             print("Options:") # Displays options
             print("1 [STR]. " + op1 + ".")
@@ -64,4 +64,26 @@ def chapter_1_challenge(c1): #c1 is the character:
                 break # If user said yes, selection loop will exit.
         
         print("Let's get into the challenge.")
+        if option == "1":
+            print("Carrying the pizzas to the car requires 6 strength to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._str)
+            if num > 10: #11-12
+                print("Critical win! The pizzas and wings feel as light as paper, and you feel even stronger! +1 strength!")
+                c1.challenge_result(1, 1)
+                c1.mod_stat(str, 1)
+            elif num > 5: #6-10
+                print("Win! With some trouble, but not too much trouble, you put the order into the car, and you're on your way.")
+                c1.challenge_result(1, 1)
+            elif num > 3: #4-5
+                print("Lose! The food turns out to be a little heavier than you would've thought, and you stumble and hit your elbow on your way out.")
+                c1.challenge_result(1, 0)
+            else: #2-3
+                print("Critical lose! Are these pizzas actually pizzas, or cinder blocks?! You fall and drop the food, but luckily nothing spills. -1 Strength")
+                c1.challenge_result(1, 0)
+                c1.mod_stat(str, -1)
+    if c1._role == "mc": #challenge 1 for Mail Courier
+        print()
+
+#Chapter 1 finished
 
