@@ -1,4 +1,4 @@
- """This module contains Role 2, AKA the Mail Courier, including the object class, its variables, and methods"""
+"""This module contains Role 2, AKA the Mail Courier, including the object class, its variables, and methods"""
 class Mail:
     """This class contains the Mail Courier object,  with the attributes Strength, Dexterity, and Intelligence"""
     def __init__(self, name):
