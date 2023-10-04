@@ -9,6 +9,3 @@ def roll_dice():
     print("You rolled " + str(sum))   
     return sum
 
-def stat_change(r, stat, inc):
-    if r == 1:
-        Pizza.mod_stat(stat, inc)

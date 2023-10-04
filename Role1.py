@@ -3,6 +3,7 @@ class Pizza:
     """This class contains the Pizza Driver object,  with the attributes Strength, Dexterity, and Charisma"""
     def __init__(self, name):
         self._name = name
+        self._role = "pd"
         self._str = 0
         self._dex = 0
         self._chr = 1
