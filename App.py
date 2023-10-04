@@ -65,8 +65,8 @@ print("")
 
 if role == 1:
     c1 = Pizza(character_name)
-# else:
-    # c1 = 
+else:
+    c2 = ()
 
 #Challenge 1, Pizza Driver
 if c1._role == "pd":
@@ -86,3 +86,8 @@ if c1._role == "pd":
     print('Now... how to load the pizzas into the car?')
     print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss.""")
     
+#Challenge 1, Mail Courier 
+if c2._role == "mc":
+    print('                                        Chapter 1: Canada Post')
+print( '                                    * Mail Courier arrives at Canada Post*'          )
+print('mail: Good morning! Have you got any mail for me  ')

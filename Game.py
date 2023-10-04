@@ -1,6 +1,7 @@
 """This module contains the game logic like methods"""
 import random
 from Role1 import Pizza
+from Role2 import Mail
 
 def roll_dice():
     d1 = random.randint(1, 6)
@@ -10,7 +11,6 @@ def roll_dice():
     return sum
 
 
-import random
-from Role2 import Mail
+
 
 
