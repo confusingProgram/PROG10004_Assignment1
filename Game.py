@@ -1,6 +1,8 @@
 """This module contains the game logic like methods"""
 import random
 from Role1 import Pizza
+from Role2 import Mail
+
 
 def roll_dice(stat): #stat = c1._str for example
     d1 = random.randint(1, 6)
@@ -143,6 +145,7 @@ def chapter_1_challenge(c1): #c1 is the character:
         print()
     print('                                                 *End of Chapter 1*')
 
+
 #Chapter 1 finished
 
 def chapter_2_cutscene(c1): #c1 is the character
@@ -150,3 +153,4 @@ def chapter_2_cutscene(c1): #c1 is the character
         print()
     elif c1._role == "mc": # mail courier
         print()
+
