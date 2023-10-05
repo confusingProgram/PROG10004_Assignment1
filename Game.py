@@ -297,17 +297,17 @@ def chapter_3_cutscene(c1): #c1 is the character
         print('''Strange Person: "No can do. Those pizzas will be mine!"''')
         print('                                     Objective: Defend the pizzas!')
         print("Wow! They really want your pizzas! But you're determined to complete your job!")
-        print("You can either fight in hand-to-hand combat;  ")
+        print("You can either fight in hand-to-hand combat; swing open the car door to knock them out; or intimidate them.")
     elif c1._role == "mc": # mail courier
         print()
 
-def chapter_2_challenge(c1):
+def chapter_3_challenge(c1):
     if c1._role == "pd": #pizza driver
         option = ""
         while True: # Selection loop
-            op1 = "push it yourself" # requires 8 strength, +1 strength if 11-12, -1 strength on loss if 3-4
-            op2 = "use a tree branch as a lever" # requires 5 dexterity to pass, +1 dexterity if 11-12, -1 charisma on loss if 2-3
-            op3 = "smooth-talk the passerby" # requires 6 charisma to pass, +1 charisma if 11-12, -1 charisma on loss if 2-3
+            op1 = "fight hand-to-hand" # requires 7 strength
+            op2 = "open the car door" # requires 7 dexterity to pass
+            op3 = "intimidate them" # requires 7 charisma to pass
             
             print("Options:") # Displays options
             print("1 [STR]. " + op1 + ".")
@@ -329,7 +329,7 @@ def chapter_2_challenge(c1):
                     print("Error, invalid answer.")
 
             while True: #Confirmation loop
-                choice = input("Are you sure you want to " +op + "?  Yes or No: ")
+                choice = input("Are you sure you want to " + op + "?  Yes or No: ")
                 if choice == "Yes" or choice == "No":
                     break # If user says Yes or No, confirmation loop will exit
                 else:
@@ -340,3 +340,68 @@ def chapter_2_challenge(c1):
                 break # If user said yes, selection loop will exit.
         
         print("Let's get into the challenge.")
+
+        if option == "1":
+            print("Fighting hand-to-hand requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._str)
+            if num > 10: #11-12
+                print("Critical win! With one fell swing, the stranger is knocked unconscious. He'll be fine.")
+                c1.challenge_result(3, 1)
+                c1.mod_stat(str, 1)
+            elif num > 6: #7-10
+                print("Win! You show your martial prowess, and defeat the stranger.")
+                c1.challenge_result(3, 1)
+            elif num > 3: #4-5
+                print("Lose! Despite your best effort, the stranger comes out on top and takes the food!")
+                c1.challenge_result(3, 0)
+            else: #2-3
+                print("Critical lose! Before you can even get ready, the stranger delivers a mean right-hook! You wake up to find the stranger and the pizzas gone.")
+                c1.challenge_result(3, 0)
+        elif option == "2":
+            print("Opening the car door requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._dex)
+            if num > 10: #11-12
+                print("Critical win! The car door swings open and knocks out the stranger! That's gonna leave a mark.")
+                c1.challenge_result(3, 1)
+            elif num > 6: #5-10
+                print("Win! You catch the stranger off guard, knocking them off their feet and leaving them dazed.")
+                c1.challenge_result(3, 1)
+            elif num > 3: #4-5
+                print("Lose! The car door catches on your foot, which the stranger uses to their advantage, as they take the pizzas.")
+                c1.challenge_result(3, 0)
+            else: #2-3
+                print("Critical lose! Your footing wasn't in the right place, and you accidentally hit yourself with the door! The stranger flees with the pizzas.")
+                c1.challenge_result(3, 0)
+        elif option == "3":
+            print("Intimidating the stranger requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._chr)
+            if num > 10: #11-12
+                print(c1._name + ': "Are you sure about this? You hav"')
+                print(c1._name + ''': "Come on! Don't you wanna say that you've pushed a boulder?"''')
+                print('Passerby: "..."')
+                print('      "You make a convincing argument. Alright."')
+                print("Critical win! It does sound cool to say that you've moved a big boulder! +1 Charisma")
+                c1.challenge_result(2, 1)
+                c1.mod_stat(chr, 1)
+            elif num > 6: #7-10
+                print(c1._name + ': "Actually, can you help me push the boulder?"')
+                print('''Passerby: "What's in it for me? The boulder isn't my problem."''')
+                print(c1._name + ': "I could give you a buy-one-get-one free pizza coupon...?"')
+                print('''Passerby: "I do like pizza. Alright then, let's get to it."''')
+                print("Win! An extra customer! Your boss will be quite pleased.")
+                c1.challenge_result(2, 1)
+            elif num > 3: #4-5
+                print(c1._name + ''': "Could you help me with the boulder? It's really heavy. And geez, it could crush one of us."''')
+                print('''Passerby: "That makes me wanna move it even less. You're on your own."''')
+                print("You try moving the boulder by yourself but it seems to gotten 8 times heavier after the passerby leaves!")
+                print("Lose! Why did it get heavier after they left??")
+                c1.challenge_result(2, 0)
+            else: #2-3
+                print(c1._name + ''': "Geez, wouldn't kill you to be a little kinder."''')
+                print('''Passerby: "How rude! I'm calling your store and leaving a bad review!"''')
+                print("Critical lose! You'll be lucky if your boss doesn't fire you after this. -1 Charisma.")
+                c1.challenge_result(2, 0)
+                c1.mod_stat(chr, -1)
