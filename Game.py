@@ -3,8 +3,6 @@ import random
 from Role1 import Pizza
 from Role2 import Mail
 
-
-
 def roll_dice(stat): #stat = c1._str for example
     d1 = random.randint(1, 6)
     d2 = random.randint(1, 6)
@@ -32,6 +30,7 @@ def chapter_1_cutscene(c1): #c1 is the character
         print('Gee, they sure sounds angry!')
         print('Now... how to load the pizzas into the car?')
         print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss to carry them.""")
+    
     elif c2._role == "mc": #Mail Courier 
         print("Nothing") # Where the cutscene for the mail courier will go.
 
@@ -156,9 +155,10 @@ def chapter_1_challenge(c1): #c1 is the character:
                 print("Critical lose! Very daring to ask your boss a favour when you're already on their bad side. -1 Charisma.")
                 c1.challenge_result(1, 0)
                 c1.mod_stat(chr, -1)
-    elif c1._role == "mc": #challenge 1 for Mail Courier
-        print()
-    print('                                                 *End of Chapter 1*')
+    
+    elif c2._role == "mc": #challenge 1 for Mail Courier
+       
+        print('                                                 *End of Chapter 1*')
 
 
 #Chapter 1 finished
@@ -180,8 +180,21 @@ def chapter_2_cutscene(c1): #c1 is the character
         print("How on earth are you going to move the boulder?")
         print("You could try pushing it yourself; using a sturdy tree branch to use it as a lever; or smooth-talk the passerby in helping.")
 
-    elif c1._role == "mc": # mail courier
-        print()
+    elif c2._role == "mc": # mail courier
+
+        print('                                    *Chapter 2: On Your Journey*')
+        print("You are making your way down to That street.")
+        print("When you suddenly stop")
+        print('                                            *SCREEECHHH!!!*')
+        print('      "What is that?!"')
+        print("There is a random portal that just popped up in the middle of the street!")
+        print(c2._name + ': "I have to pull over to the side first ."')
+        print('                                     *SCREEEEEEEEEEEECH*                                ')
+        print('                                     Objective: Close the Portal')
+        print(c2._name +': "Who just opens a portal in the middle of the street? This is not Harry Potter!"')
+        print("You can just drive into to it, however you don't know where you are going to end up. It is better if you close the portal.")
+        print("How are you going to close the portal?")
+        print("You could try to push a huge boulder in it ; use a ray gun ; or press the red button.")
         
 def chapter_2_challenge(c1):
     if c1._role == "pd": #pizza driver
@@ -292,10 +305,11 @@ def chapter_2_challenge(c1):
                 c1.mod_stat(chr, -1)
 
 
-    elif c1._role == "mc": #mail courier
+    elif c2._role == "mc": #mail courier
         print()
     print('                                                 *End of Chapter 2*')
 
+#Chapter 1 finished
 def chapter_1_challenge(c2):
     if c2._role =="mc": #mail courier 
         option = 0
@@ -387,4 +401,95 @@ def chapter_1_challenge(c2):
                 c2.mod_stat(iq, -1)
     print('                                                 *This Ends Chapter 1*')
 
-#Chapter 1 finished
+
+# CHAPTER 2
+def chapter_2_challenge(c2):
+    if c2._role == "mc": #mail courier
+        option = ""
+        while True: # Selection loop
+            op1 = "push a boulder" # requires 6 strength, +1 strength if 11-12, -1 Intelligence on loss if 3-4
+            op2 = "use a ray gun" # requires 8 dexterity to pass, +1 dexterity if 11-12, -1 strenght on loss if 2-3
+            op3 = "press the button" # requires 7 Intelligence to pass, +1 charisma if 11-12, -1 dexterity on loss if 2-3
+            op =""
+            print("Options:") # Displays options
+            print("1 [STR]. " + op1 + ".")
+            print("2 [DEX]. " + op2 + ".")
+            print("3 [IQ]. "  + op3 + ".")
+
+            while True: # Choosing options loop
+                options = input("Type in 1, 2, or 3: ")
+                if option == "1" or option == "2" or option == "3":
+                    break # If user selects a valid option, then options loop will exit
+                else:
+                    print("Error, invalid answer.")
+
+            while True: #Confrim loop
+                choice = input("Are you sure you want to " +op + "?  Yes or No: ")
+                if choice == "Yes" or choice == "No":
+                    break # If user says Yes or No, confirm loop will exit
+                else:
+                    print("Error, invalid answer.")
+            
+            if choice == "Yes":
+                print("You have chosen to: " + op + ".")
+                break # If user said yes, selection loop will exit.
+        
+        print("Alright, Let's start the challenge!!")
+
+        if option == "1":
+            print("Pushing the boulder into the Portal requires a roll of 6 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c2._str)
+            if num > 10: #11-12
+                print("Critical Win! WOOWHH that bouder had no chance against you! +1 strength!")
+                c2.challenge_result(2, 1)
+                c2.mod_stat(str, 1)
+            elif num > 7: #8-10
+                print("Win! That was really heavy, but you managed to roll the boulder into the portal.")
+                c2.challenge_result(2, 1)
+            elif num > 3: #4-7
+                print("Lose! The boulder is way too heavy. When you tried to move it, you crushed a brid. ***OUCHH**")
+                c2.challenge_result(2, 0)
+            else: #2-3
+                print("Critical lose! You pushed the boulder into the other direction and rolled away from you. -1 strenght.")
+                c2.challenge_result(2, 0)
+                c2.mod_stat(str, -1)
+        elif option == "2":
+            print("Use a ray gun requires a roll of 8 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c2._dex)
+            if num > 10: #11-12
+                print("Critical win! Heyy! at least now you know that you can use a ray gun, if you need to. +1 Dexterity")
+                c2.challenge_result(2, 1)
+                c2.mod_stat(dex, 1)
+            elif num > 4: #5-10
+                print("Win! At least you got the aim right.")
+                c2.challenge_result(2, 1)
+            elif num > 2: #3-4
+                print("Lose! The portal truned into a bigger one. You pressed the wrong button.")
+                c2.challenge_result(2, 0)
+            else: #2
+                print("Critical lose! You aimed the ray gun at someone and they truned into a portal. Great now you have 2 portals to deal with! -1 Dexterity.")
+                c2.challenge_result(2, 0)
+                c2.mod_stat(dex, -1)
+        elif option == "3":
+            print("press the red button requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c2._iq)
+            if num > 10: #11-12
+                print("Critical win! You pressed the red button and it was gone before you know it! +1 Intelligence")
+                c2.challenge_result(2, 1)
+                c2.mod_stat(chr, 1)
+            elif num > 5: #6-10
+                print("Win! You had trouble finding the button, but at last you got it.")
+                c2.challenge_result(2, 1)
+            elif num > 3: #4-5
+                print("Lose! You pressed the wrong button and let out some werid creatures!")
+                c2.challenge_result(2, 0)
+            else: #2-3
+                print("Critical lose! You pressed the yellow one instead. Back to kindergarden again!. -1 Intelligence.")
+                c2.challenge_result(2, 0)
+                c2.mod_stat(chr, -1)
+print('                                                 *This Ends Chapter 2*')
+
+#Chapter 2 finished
