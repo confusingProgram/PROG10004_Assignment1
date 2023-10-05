@@ -153,7 +153,7 @@ def chapter_2_cutscene(c1): #c1 is the character
         print('                                    *Chapter 2: On The Road*')
         print("You are driving down a road on your way to 123 Somewhere Street.")
         print(c1._name + ': "..."')
-        print('       *SQUINTS*')
+        print('      *SQUINTS*')
         print('      "What is that?"')
         print("It is an imposing boulder, impeding your path!")
         print(c1._name + ': "I should probably pull over."')
@@ -282,3 +282,61 @@ def chapter_2_challenge(c1):
     print('                                                 *End of Chapter 2*')
 
 
+def chapter_3_cutscene(c1): #c1 is the character
+    if c1._role == "pd": #pizza driver
+        print('                                    *Chapter 3: A Delicious Delivery*')
+        print(c1._name + ''': "123 Somewhere Street, here it is."''')
+        print('                                     *DING DING*                                ')
+        print('                                          *SLAM*                                ')
+        print("As you get out of the car, you're approached by a strange person.")
+        print(c1._name + ''': "Uhh, can I help you?"''')
+        print('''Strange Person: "Why, yes you can. I would like those pizzas you have there."''')
+        print(c1._name + ''': "Do you live at 123 Somewhere Street?"''')
+        print('''Strange Person: "If I get those pizzas, then yes."''')
+        print(c1._name + ''': "You're gonna have to step aside, I need to deliver this food."''')
+        print('''Strange Person: "No can do. Those pizzas will be mine!"''')
+        print('                                     Objective: Defend the pizzas!')
+        print("Wow! They really want your pizzas! But you're determined to complete your job!")
+        print("You can either fight in hand-to-hand combat;  ")
+    elif c1._role == "mc": # mail courier
+        print()
+
+def chapter_2_challenge(c1):
+    if c1._role == "pd": #pizza driver
+        option = ""
+        while True: # Selection loop
+            op1 = "push it yourself" # requires 8 strength, +1 strength if 11-12, -1 strength on loss if 3-4
+            op2 = "use a tree branch as a lever" # requires 5 dexterity to pass, +1 dexterity if 11-12, -1 charisma on loss if 2-3
+            op3 = "smooth-talk the passerby" # requires 6 charisma to pass, +1 charisma if 11-12, -1 charisma on loss if 2-3
+            
+            print("Options:") # Displays options
+            print("1 [STR]. " + op1 + ".")
+            print("2 [DEX]. " + op2 + ".")
+            print("3 [CHR]. " + op3 + ".")
+
+            while True: # Choosing options loop
+                option = input("Type in 1, 2, or 3: ")
+                if option == "1":
+                    op = op1
+                    break # If user selects a valid option, options loop will exit
+                elif option == "2":
+                    op = op2
+                    break
+                elif option == "3":
+                    op = op3
+                    break
+                else:
+                    print("Error, invalid answer.")
+
+            while True: #Confirmation loop
+                choice = input("Are you sure you want to " +op + "?  Yes or No: ")
+                if choice == "Yes" or choice == "No":
+                    break # If user says Yes or No, confirmation loop will exit
+                else:
+                    print("Error, invalid answer.")
+            
+            if choice == "Yes":
+                print("You have chosen to: " + op + ".")
+                break # If user said yes, selection loop will exit.
+        
+        print("Let's get into the challenge.")

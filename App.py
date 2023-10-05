@@ -68,3 +68,5 @@ elif role == "2":
 
 Game.chapter_1_cutscene(c1)
 Game.chapter_1_challenge(c1)
+Game.chapter_2_cutscene(c1)
+Game.chapter_2_challenge(c1)
