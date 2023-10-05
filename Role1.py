@@ -17,11 +17,11 @@ class Pizza:
 
     def mod_stat(self, stat, inc):
         """This method changes the stat by the amount indicated"""
-        if stat == str:
+        if stat == _str:
             self._str = self._str + inc
-        elif stat == dex:
+        elif stat == _dex:
             self._dex = self._dex + inc
-        elif stat == chr:
+        elif stat == _chr:
             self._chr = self._chr + inc
 
     def challenge_result(self, chal_num, result):
