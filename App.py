@@ -1,7 +1,6 @@
 """This module contains the application through which the player interacts with the game"""
-import Game
 from Role1 import Pizza
-# from Role2 import Mail
+from Role2 import Mail
 
 print("Welcome to [game name], a text-based RPG adventure game!")
 print("Your goal is to make a delivery to 123 Somewhere Street.")
@@ -24,24 +23,28 @@ choice = ""
 while True:
     role = input("Please enter 1 for pizza driver, or 2 for mail courier: ")
     
-    if role == "1" or role == "2": #checks if role is 1 or 2
-        if role == "1": #assigns role_name
-            role_name = "pizza driver"
-        else:
-            role_name = "mail courier"
-        
-        while True:
-            choice = input("Are you sure you want to play as " +role_name + "? Yes or No: ")
-            if choice == "Yes" or choice == "No":
-                break #exits the confirmation loop
+    if role.isdigit(): #checks if role is a number
+        role = int(role)
+        if role == 1 or role == 2: #checks if role is 1 or 2
+            if role == 1: #assigns role_name
+                role_name = "pizza driver"
             else:
-                print("Error, invalid answer.")
-        if choice == "Yes":
-            print("Great! You have chosen to play as the " +role_name +"!")
-            break #exits the role selection loop. Will only activate if role 1 or 2 is selected and "Yes" is selected
+                role_name = "mail courier"
+            
+            while True:
+                choice = input("Are you sure you want to play as " +role_name + "? Yes or No: ")
+                if choice == "Yes" or choice == "No":
+                    break #exits the confirmation loop
+                else:
+                    print("Error, invalid answer.")
+
+            if choice == "Yes":
+                print("Great! You have chosen to play as the " +role_name +"!")
+                break #exits the role selection loop. Will only activate if role 1 or 2 is selected and "Yes" is selected
+        else:
+            print("Error, invalid answer.")
     else:
         print("Error, invalid answer.")
-
 
 character_name = ""
 while True:
@@ -60,22 +63,37 @@ print("Let's begin the journey!")
 print("")
 
 
-if role == "1":
+if role == 1:
     c1 = Pizza(character_name)
-elif role == "2":
-    # c1 = Mail(character_name)
-    print()
-    
-Game.chapter_1_cutscene(c1)
-Game.chapter_1_challenge(c1)
+else:
+    c2 = Mail(character_name)
 
-'''    
+#Challenge 1, Pizza Driver
+if c1._role == "pd":
+    print('                                 *Chapter 1: The Pizza Shop*')
+    print('                                         *RING RING RING*                                ')
+    print('                                             *KERCHUNK*                                      ')
+    print('Boss: "Hello, welcome to Supernova Pizza, how can I help you?"')
+    print('''      "..Uh huh... Uh huh... Got it, we'll have your order there in no time. Goodbye."''')
+    print('                                             *KERCHUNK*                                      ')
+    print('Boss: "Alright ' + c1._name + ', we got a new order for 123 Somewhere Street."')
+    print('      "The order is 3 pepperoni pizzas, and 12 pc. wings. We have some already. Go load them into your car."')
+    print('      "You better show these customers that Supernova Pizza is the fastest restaurant around!"')
+    print('      "And no slacking! Last time, I had a customer complain that their pizza was so cold, it could cool their drinks!"')
+    print()
+    print('                                     Objective: Load the order')
+    print('Gee, he sure sounds angry!')
+    print('Now... how to load the pizzas into the car?')
+    print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss.""")
+    
 #Challenge 1, Mail Courier 
 if c2._role == "mc":
     print('                                        Chapter 1: Canada Post')
 print( '                                    * Mail Courier arrives at Canada Post*'          )
-print('mail: Good morning! Have you got any mail for me  ')
-'''
-
-
-
+print ('                                            *DING DING *        ')
+print ('                                                    *Door Opens ')
+print(                              "Good morning! Have you got any mail for me to deliver?")
+print(          'Boss: "Good morning '+ c2._name +', I have your mail right here."')
+print(              'Boss: "You have to deleiver it to House number 123 on That Street"')
+print(              'Boss:"But be carefull, Your choices will determine your FINAL OUTCOME"' )
+print (                                 'Ok Boss! I got this!!!')
