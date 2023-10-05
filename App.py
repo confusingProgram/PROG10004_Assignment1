@@ -50,7 +50,7 @@ character_name = ""
 while True:
     character_name = input("And what's the name of the " + role_name + ": ")
     while True:
-                choice = input("Their name is: " + character_name + "? Yes or No: ")
+                choice = input("Their name is " + character_name + "? Yes or No: ")
                 if choice == "Yes" or choice == "No":
                     break #exits the confirmation loop
                 else:
