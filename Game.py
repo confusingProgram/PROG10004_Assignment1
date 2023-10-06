@@ -643,5 +643,6 @@ def ending_cutscene(c1):
             print("Having lost the pizzas, you regretfully phone your boss as you get back into the car.")
             print('Boss: "WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
             print("Game over! You failed to deliver the pizzas!")
-    elif c1._role == "mc"
+    elif c1._role == "mc":
+        print()
 
