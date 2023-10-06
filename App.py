@@ -624,12 +624,98 @@ def chapter_2_challenge_mc(mc):
 
 def chapter_3_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 3 for the Mail Courier"""
-    print()
+    print('                         *Chapter 3: The Delivery*')
+    print(mc._name + ''': "123 That Street, OH! found it!"''')
+    print(' You get of the vehicle and make your way to get the boxes out. ')
+    print('                                          *SLAM*                                ')
+    print(" As you are apporaching the main door, a dog runs up to you")
+    print(mc._name + ''': "ohh what do we have here?"''')
+    print('''Dog: "*BARK* *WOOF* *WOOF*."''')
+    print('''Even though the dog seems nice, it starts biting your leg"''')
+    print('                                     Objective: Protect the Boxes!')
+    print("wooh, this dog is really chewing you leg down. How are you going to make sure that the boxes are kept safe!")
+    print("You could try to fling the dog off your leg; drop the boxes and bark back; or run away while the dog chases you.")
 
 
 def chapter_3_challenge_mc(mc):
     """This method contains the game challenge for Chapter 3 for the Mail Courier"""
-    print()
+    op_num = ""
+    while True: # Selection loop
+        op_text_1 = "fling the dog off your leg" # Requires 8 strength to pass.
+        op_text_2 = "drop the boxes and bark back" # Requires 7 dexterity to pass.
+        op_text_3 = "run away while the dog chases you" # Requires 7 IQ to pass.
+        op_text = ""
+        print("Options:")
+        print("1 [STR]. " + op_text_1 + ".")
+        print("2 [DEX]. " + op_text_2 + ".")
+        print("3 [IQ]. "  + op_text_3 + ".")
+        while True: # Choosing options loop.
+            options = input("Type in 1, 2, or 3: ")
+            if op_num == "1" or op_num == "2" or op_num == "3":
+                break # If user selects a valid op_num, then options loop will exit.
+            else:
+                print("Error, invalid answer.")
+        while True: # Confirmation loop.
+            choice = input("Are you sure you want to " + op_text + "?  Yes or No: ")
+            if choice == "Yes" or choice == "No":
+                break # If user says "Yes" or "No", confirmation loop will exit.
+            else:
+                print("Error, invalid answer.")
+        
+        if choice == "Yes":
+            print("You have chosen to: " + op_text + ".")
+            break # If user said "Yes", selection loop will exit.
+
+    print("Let's get the challenge started.")
+    if op_num == "1":
+        print("Flinging the dog off your leg requires a roll of 8 in order to complete the challenge.")
+        input("Press Enter to roll the dice.")
+        num = roll_dice(mc._str)
+        if num > 10: #11-12
+            print("Critical win! With one fell flick, the dog falls down and scurries away.")
+            mc.challenge_result(3, 1)
+        elif num > 7: #8-10
+            print("Win! You try to flicking the dog off, but he tired so he leaves.")
+            mc.challenge_result(3, 1)
+        elif num > 3: #4-7
+            print("Lose! The dog is more aggresive and bites you even harder")
+            mc.challenge_result(3, 0)
+        else: #2-3
+            print("Critical lose! The dog's bite so severe that you end up in a hospital.")
+            mc.challenge_result(3, 0)
+    elif op_num == "2":
+        print("Dropping the boxes and bark back at the dog requires a roll of 7 in order to complete the challenge.")
+        input("Press Enter to roll the dice.")
+        num = roll_dice(mc._dex)
+        if num > 10: #11-12
+            print("Critical win! Your barks intimidates the dog and it runs away. Good job!")
+            mc.challenge_result(3, 1)
+        elif num > 6: #7-10
+            print("Win! As you are putting the boxes down, the dog gets scared by the boxes.")
+            mc.challenge_result(3, 1)
+        elif num > 3: #4-6
+            print("Lose! You drop the boxes on the dog by accident and someone see you. ")
+            mc.challenge_result(3, 0)
+        else: #2-3
+            print("Critical lose! You end up slipping on dog poop trying to put the boxes down. *BOO HOO*")
+            mc.challenge_result(3, 0)
+    elif op_num == "3":
+        print("Running away while the dog chases you requires a roll of 7 in order to complete the challenge.")
+        input("Press Enter to roll the dice.")
+        num = roll_dice(mc._iq)
+        if num > 10: #11-12
+            print("Critical win! As you are runing away, the dog gets distracted by the sprinkler!")
+            mc.challenge_result(3, 1)
+        elif num > 6: #7-10
+            print("Win! Another dog passes by and the dog goes to it. That's one way to get away.")
+            mc.challenge_result(3, 1)
+        elif num > 3: #4-6
+            print("Lose! You bump into a pole while trying to run away from the dog. That's got to hurt!")
+            mc.challenge_result(3, 0)
+        else: #2-3
+            print("Critical lose! The dog is still chasing you which cause you to trip and drop the boxes.")
+            mc.challenge_result(3, 0)
+    print('                                                 *This Ends Chapter 3*')
 
 
 def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 was successful.

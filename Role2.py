@@ -7,9 +7,9 @@ class Mail:
         self._str = 1
         self._dex = -1
         self._iq = 1
-        self._challenge_1_success = 0
-        self._challenge_2_success = 0
-        self._challenge_3_success = 0
+        self._challenge_1_result = 0
+        self._challenge_2_result = 0
+        self._challenge_3_result = 0
 
     
     def __str__(self):
@@ -30,8 +30,8 @@ class Mail:
         # chal_num refers to the challenge number, result is the result of the challenge,
         # where 0 == failure, and 1 == success
         if chal_num == 1:
-            self._challenge_1_success = result
+            self._challenge_1_result = result
         elif  chal_num == 2:
-            self._challenge_2_success = result
+            self._challenge_2_result = result
         else:
-            self._challenge_3_success = result
+            self._challenge_3_result = result
