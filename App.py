@@ -399,7 +399,7 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
     print('*Ending Cutscene*'.center(100, " "))
     if pd._challenge_3_result == 1:
         print('*DING DONG*'.center(100, " "))
-        print('*CREEEEAK*'.center(100, " "))
+        print('*CREEEEEAK*'.center(100, " "))
         print("Exhausted, you make your way up the steps of the house.")
         print(pd._name + ''': "Hello, order of 3 pepperonis, and 12 pc. wings?"''')
         print('''Homeowner: "Yep, that's right! You look a little rough, everything alright?"''')
@@ -424,7 +424,7 @@ def chapter_1_cutscene_mc(mc):
     print('Chapter 1: Canada Post'.center(100, " "))
     x = '*' + mc._name + ' arrives at Canada Post*'
     print(x.center(100, " "))
-    print('*DING DING *'.center(100, " "))
+    print('*DING DING*'.center(100, " "))
     print('*DOOR OPENS'.center(100, " "))
     print(mc._name + ': "Good morning! Have you got any boxes for me to deliver?"')
     print('Boss: "Good morning ' + mc._name + ', I have the boxes right here."')
@@ -592,7 +592,7 @@ def chapter_2_challenge_mc(mc):
     print("Alright, Let's start the challenge!!")
     print()
     if op_num == "1":
-        print("Pushing the boulder into the portal requires a roll of 6 to complete.")
+        print("Pushing a boulder into the portal requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._str)
         if num > 10: #11-12
@@ -763,7 +763,7 @@ def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 
         print("As you make your way up the steps, you give a sigh of relief after that dog attack.")
         print("Someone should put that dog on a leash.")
         print('*DING DONG*'.center(100, " "))
-        print('*CREEEEAK*'.center(100, " "))
+        print('*CREEEEEAK*'.center(100, " "))
         print(mc._name + ''': "Hello, I have some boxes for the owner of 123 Somewhere Street."''')
         print('      "Are you the owner?"')
         print('''Homeowner: "Yep, that's right! Wow, you have a nasty rip in your pant leg."''')
