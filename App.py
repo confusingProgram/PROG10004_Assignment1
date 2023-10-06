@@ -762,7 +762,7 @@ def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 
     if mc._challenge_3_result == 1:
         print("Tried from all the challenges that came your way. You start walking to the door to drop the boxes.")
         print('*DING DONG*'.center(100, " "))
-        print('*CREEEEAK*'.center(100, " "))
+        print('*CREEEEEAK*'.center(100, " "))
         print(mc._name + ''': "Hello, is this Tony that am I speaking to?"''')
         print('''Tony: "Yep, that's me! How can I help you?"''')
         print(mc._name + ''': "These are the boxes that you ordered! May I have your signature?"''')
@@ -779,7 +779,7 @@ def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 
         print("You drop the boxes and the contents inside broke.")
         print("You go up to the house and tell the homeowner Tony that you broke the contents inside.")
         print('*DING DONG*'.center(100, " "))
-        print('*CREEEEAK*'.center(100, " "))
+        print('*CREEEEEAK*'.center(100, " "))
         print(mc._name + ''': "Hello, I think I broke what was in the boxes?"''')
         print('''Tony: *TAKES BOXES*''')
         print('      "WHAT, YOU KNOW HOW EXPENSIVE THAT WAS?!"')
