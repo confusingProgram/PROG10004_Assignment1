@@ -9,3 +9,4 @@ def roll_dice(stat): #stat = pd._str for example
     sum = d1 + d2 + stat
     print("You rolled " + str(sum) + "!")   
     return sum
+
