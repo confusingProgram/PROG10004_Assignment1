@@ -421,7 +421,7 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
 #mc == Mail Courier
 def chapter_1_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 1 for the Mail Courier"""
-    print('Chapter 1: Canada Post'.center(100, " "))
+    print('*Chapter 1: Canada Post*'.center(100, " "))
     x = '*' + mc._name + ' arrives at Canada Post*'
     print(x.center(100, " "))
     print('*DING DING*'.center(100, " "))
