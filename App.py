@@ -70,7 +70,7 @@ def chapter_1_challenge_pd(pd):
         if num > 10: #11-12
             print("Critical win! The pizzas and wings feel as light as paper, and you feel even stronger! +1 strength!")
             pd.challenge_result(1, 1)
-            pd.mod_stat(str, 1)
+            pd.mod_stat("str", 1)
         elif num > 5: #6-10
             print("Win! With some trouble, but not too much trouble, you put the order into the car, and you're on your way.")
             pd.challenge_result(1, 1)
@@ -80,7 +80,7 @@ def chapter_1_challenge_pd(pd):
         else: #2-3
             print("Critical lose! Are these pizzas actually pizzas, or cinder blocks?! You fall and drop the food, but luckily nothing spills. -1 Strength.")
             pd.challenge_result(1, 0)
-            pd.mod_stat(str, -1)
+            pd.mod_stat("str", -1)
     elif op_num == "2":
         print("Using a cart to bring the pizzas requires a roll of 4 to complete.")
         input("Press Enter to roll the dice.")
@@ -88,7 +88,7 @@ def chapter_1_challenge_pd(pd):
         if num > 10: #11-12
             print("Critical win! Why work hard when you can just handle a cart instead? Piece of cake! +1 Dexterity")
             pd.challenge_result(1, 1)
-            pd.mod_stat(dex, 1)
+            pd.mod_stat("dex", 1)
         elif num > 3: #4-10
             print("Win! Sure is handy having this cart around.")
             pd.challenge_result(1, 1)
@@ -98,7 +98,7 @@ def chapter_1_challenge_pd(pd):
         else: #2
             print("Critical lose! Hastily, you run with the cart, but lose control and smash your hand into the door frame! Yowch!! -1 Dexterity.")
             pd.challenge_result(1, 0)
-            pd.mod_stat(dex, -1)
+            pd.mod_stat("dex", -1)
     elif op_num == "3":
         print("Persuading your boss to carry them requires a roll of 8 to complete.")
         input("Press Enter to roll the dice.")
@@ -110,7 +110,7 @@ def chapter_1_challenge_pd(pd):
             print('      "Fine, but make it quick!"')
             print("Critical win! Huh, guess you're doing even less work. +1 Charisma")
             pd.challenge_result(1, 1)
-            pd.mod_stat(chr, 1)
+            pd.mod_stat("chr", 1)
         elif num > 7: #8-10
             print('                                         *SNAP SNAP SNAP*                                ')
             print('Boss: "Hey! Are you even listening?!"')
@@ -130,7 +130,7 @@ def chapter_1_challenge_pd(pd):
             print('      "How about you do me this favour, and carry the darn order to the car?!"')
             print("Critical lose! Very daring to ask your boss a favour when you're already on their bad side. -1 Charisma.")
             pd.challenge_result(1, 0)
-            pd.mod_stat(chr, -1)
+            pd.mod_stat("chr", -1)
     print('                                                 *End of Chapter 1*')
 
 
@@ -197,7 +197,7 @@ def chapter_2_challenge_pd(pd):
         if num > 10: #11-12
             print("Critical win! Woah, do you go to the gym?! That boulder basically moved itself! +1 strength!")
             pd.challenge_result(2, 1)
-            pd.mod_stat(str, 1)
+            pd.mod_stat("str", 1)
         elif num > 7: #8-10
             print("Win! It's pretty heavy, but you're able to manage and roll the boulder out.")
             pd.challenge_result(2, 1)
@@ -207,7 +207,7 @@ def chapter_2_challenge_pd(pd):
         else: #2-3
             print("Critical lose! You push and push and it does not budge. You also pull 3 different muscles in the process. -1 Strength.")
             pd.challenge_result(2, 0)
-            pd.mod_stat(str, -1)
+            pd.mod_stat("str", -1)
     elif op_num == "2":
         print("Using a tree branch as a lever requires a roll of 5 to complete.")
         input("Press Enter to roll the dice.")
@@ -215,7 +215,7 @@ def chapter_2_challenge_pd(pd):
         if num > 10: #11-12
             print("Critical win! Is this a measure of dexterity or intellect? Either way, better than brute force. +1 Dexterity")
             pd.challenge_result(2, 1)
-            pd.mod_stat(dex, 1)
+            pd.mod_stat("dex", 1)
         elif num > 4: #5-10
             print("Win! Good thing this is an oak branch, and not balsa.")
             pd.challenge_result(2, 1)
@@ -225,7 +225,7 @@ def chapter_2_challenge_pd(pd):
         else: #2
             print("Critical lose! The branch becomes dislodged and breaks as it fractures your wrist. You didn't need that right? -1 Dexterity.")
             pd.challenge_result(2, 0)
-            pd.mod_stat(dex, -1)
+            pd.mod_stat("dex", -1)
     elif op_num == "3":
         print("Smooth-talking the passerby requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
@@ -238,7 +238,7 @@ def chapter_2_challenge_pd(pd):
             print('      "You make a convincing argument. Alright."')
             print("Critical win! It does sound cool to say that you've moved a big boulder! +1 Charisma")
             pd.challenge_result(2, 1)
-            pd.mod_stat(chr, 1)
+            pd.mod_stat("chr", 1)
         elif num > 5: #6-10
             print(pd._name + ': "Actually, can you help me push the boulder?"')
             print('''Passerby: "What's in it for me? The boulder isn't my problem."''')
@@ -257,7 +257,7 @@ def chapter_2_challenge_pd(pd):
             print('''Passerby: "How rude! I'm calling your store and leaving a bad review!"''')
             print("Critical lose! You'll be lucky if your boss doesn't fire you after this. -1 Charisma.")
             pd.challenge_result(2, 0)
-            pd.mod_stat(chr, -1)
+            pd.mod_stat("chr", -1)
     print('                                                 *End of Chapter 2*')
 
 
@@ -324,7 +324,7 @@ def chapter_3_challenge_pd(pd):
         if num > 10: #11-12
             print("Critical win! With one fell swing, the stranger is knocked unconscious. He'll be fine.")
             pd.challenge_result(3, 1)
-            pd.mod_stat(str, 1)
+            pd.mod_stat("str", 1)
         elif num > 6: #7-10
             print("Win! Your martial prowess is superior, and you defeat the stranger!")
             pd.challenge_result(3, 1)
@@ -415,14 +415,15 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
 def chapter_1_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 1 for the Mail Courier"""
     print('                                        Chapter 1: Canada Post')
-    print( '                                    * Mail Courier arrives at Canada Post*'          )
+    print( '                                    *Mail Courier arrives at Canada Post*'          )
     print('                                            *DING DING *        ')
     print('                                                    *DOOR OPENS ')
-    print(                              "Good morning! Have you got any boxes for me to deliver?")
-    print(          'Boss: "Good morning '+ mc.name +', I have the boxes right here."')
-    print(              'Boss: "You have to deleiver it to House number 123 on That Street"')
-    print(              'Boss:"But be carefull, these boxes are heavy "' )
-    print(                                 'Ok Boss! I got this!!!')
+    print(mc._name + ': "Good morning! Have you got any boxes for me to deliver?"')
+    print('Boss: "Good morning ' + mc.name + ', I have the boxes right here."')
+    print('''      "You have to deliver it to house number 123 on Somewhere Street"''')
+    print('''      "But be careful, these boxes are heavy!"''')
+    print(mc._name + ': "Okay boss! I got this!!!"')
+    print()
     print('                                             Objective: Deliver the Boxes!!!')
     print('                I hope that this delivery goes smoothly')
     print(  'Hmmmm... Which vehicle should I take?  ')
@@ -435,12 +436,12 @@ def chapter_1_challenge_mc(mc):
     while True: # Selection loop.
         op_text_1 = "carry the boxes to your van car to deliver mail" # Requires 8 strength, +1 strength if 11-12, -1 strength if 2-3.
         op_text_2 = "use a customer's car to deliver mail" # Requires 4 dexterity, +1 dexterity if 11-12, -1 dexterity if 2.
-        op_text_3 = "use a motocycle to deliver mail" # Requires 6 IQ, +1 IQ if 11-12, -1 IQ if 2-3.
+        op_text_3 = "use a motocycle to deliver mail" # Requires 6 intelligence, +1 intelligence if 11-12, -1 intelligence if 2-3.
         op_text = "" # Tracks the option selected for text printing purposes.
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
-        print("3 [IQ]. " +  op_text_3 + ".")
+        print("3 [INT]. " +  op_text_3 + ".")
         while True: # Choosing options loop.
             op_num = input("Type in 1, 2, or 3: ")
             if op_num == "1" or op_num == "2" or op_num == "3":
@@ -465,9 +466,9 @@ def chapter_1_challenge_mc(mc):
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._str)
         if num > 10: #11-12
-            print("Critical win! The boxes are not that heavy and you can tell that your workout paid off! +1 strength!")
+            print("Critical win! The boxes are not that heavy and you can tell that your workout paid off! +1 Strength!")
             mc.challenge_result(1, 1)
-            mc.mod_stat(str, 1)
+            mc.mod_stat("str", 1)
         elif num > 7: #8-10
             print("Win! you had a bit of trouble but you got it, you put the boxes in the van and you're off to the journey!")
             mc.challenge_result(1, 1)
@@ -477,34 +478,34 @@ def chapter_1_challenge_mc(mc):
         else: #2-3
             print("Critical lose! What is inside these boxes?! You almost drop the boxes, howvere your boss saw you and came to help you. -1 Strength.")
             mc.challenge_result(1, 0)
-            mc.mod_stat(str, -1)
+            mc.mod_stat("str", -1)
     elif op_num == "2":
         print("Using a customer's car requires a roll of 4 to complete.")
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._dex)
         if num > 10: #11-12
-            print("Critical win! WoW that customer lend you their car? This is going to be quick! +1 Dexterity")
+            print("Critical win! WoW that customer lend you their car? This is going to be quick! +1 Dexterity.")
             mc.challenge_result(1, 1)
-            mc.mod_stat(dex, 1)
+            mc.mod_stat("dex", 1)
         elif num > 3: #4-10
             print("Win! The customer didn't trust to but gave you their car anyway .")
             mc.challenge_result(1, 1)
         elif num > 2: #3
-            print("Lose! You didn't get the car and the customer ran over your foot! Ouch!! Thats got to hurt.")
+            print("Lose! You didn't get the car and the customer ran over your foot! Ouch!! That's got to hurt.")
             mc.challenge_result(1, 0)
         else: #2
             print("Critical lose! You got into a car accident as soon as you got in the car")
             print( "The customer was really mad! Sigh! you are gonna pay for that! -1 Dexterity.")
             mc.challenge_result(1, 0)
-            mc.mod_stat(dex, -1)
+            mc.mod_stat("dex", -1)
     elif op_num == "3":
         print("Using a motorbike requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
-        num = roll_dice(mc._iq)
+        num = roll_dice(mc._int)
         if num > 10: #11-12
-            print("Critical win! Hmm, I guess you're going to be delivering these boxes in no time!. +1 Intelligence")
+            print("Critical win! Hmm, I guess you're going to be delivering these boxes in no time!. +1 Intelligence.")
             mc.challenge_result(1, 1)
-            mc.mod_stat(iq, 1)
+            mc.mod_stat("int", 1)
         elif num > 5: #6-10
             print("Win! Just hope that there is no traffic, that would suck!.")
             mc.challenge_result(1, 1)
@@ -514,7 +515,7 @@ def chapter_1_challenge_mc(mc):
         else: #2-3
             print("You left the motorbike unattended and running, someone stole it! I mean who does that!!. -1 Intelligence.")
             mc.challenge_result(1, 0)
-            mc.mod_stat(iq, -1)
+            mc.mod_stat("int", -1)
     print('                                                 *This Ends Chapter 1*')
 
 
@@ -541,12 +542,12 @@ def chapter_2_challenge_mc(mc):
     while True: # Selection loop
         op_text_1 = "push a boulder" # Requires 6 strength, +1 strength if 11-12, -1 strength on loss if 2-3
         op_text_2 = "use a ray gun" # Requires 8 dexterity to pass, +1 dexterity if 11-12, -1 dexterity on loss if 2-3
-        op_text_3 = "press the button" # Requires 7 IQ to pass, +1 IQ if 11-12, -1 IQ on loss if 2-3
+        op_text_3 = "press the button" # Requires 7 intelligence to pass, +1 intelligence if 11-12, -1 intelligence on loss if 2-3
         op_text = ""
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
-        print("3 [IQ]. "  + op_text_3 + ".")
+        print("3 [INT]. "  + op_text_3 + ".")
         while True: # Choosing options loop.
             options = input("Type in 1, 2, or 3: ")
             if op_num == "1" or op_num == "2" or op_num == "3":
@@ -566,13 +567,13 @@ def chapter_2_challenge_mc(mc):
     
     print("Alright, Let's start the challenge!!")
     if op_num == "1":
-        print("Pushing the boulder into the Portal requires a roll of 6 to complete.")
+        print("Pushing the boulder into the portal requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._str)
         if num > 10: #11-12
-            print("Critical Win! WOOWHH that bouder had no chance against you! +1 strength!")
+            print("Critical Win! WOOWHH that bouder had no chance against you! +1 Strength!")
             mc.challenge_result(2, 1)
-            mc.mod_stat(str, 1)
+            mc.mod_stat("str", 1)
         elif num > 5: #6-10
             print("Win! That was really heavy, but you managed to roll the boulder into the portal.")
             mc.challenge_result(2, 1)
@@ -580,17 +581,17 @@ def chapter_2_challenge_mc(mc):
             print("Lose! The boulder is way too heavy. When you tried to move it, you crushed a bird. ***OUCHH**")
             mc.challenge_result(2, 0)
         else: #2-3
-            print("Critical lose! You pushed the boulder into the other direction and rolled away from you. -1 strength.")
+            print("Critical lose! You pushed the boulder into the other direction and rolled away from you. -1 Strength.")
             mc.challenge_result(2, 0)
-            mc.mod_stat(str, -1)
+            mc.mod_stat("str", -1)
     elif op_num == "2":
         print("Using a ray gun requires a roll of 8 to complete.")
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._dex)
         if num > 10: #11-12
-            print("Critical win! Heyy! at least now you know that you can use a ray gun, if you need to. +1 Dexterity")
+            print("Critical win! Heyy! at least now you know that you can use a ray gun, if you need to. +1 Dexterity.")
             mc.challenge_result(2, 1)
-            mc.mod_stat(dex, 1)
+            mc.mod_stat("dex", 1)
         elif num > 7: #8-10
             print("Win! At least you got the aim right.")
             mc.challenge_result(2, 1)
@@ -600,15 +601,15 @@ def chapter_2_challenge_mc(mc):
         else: #2-3
             print("Critical lose! You aimed the ray gun at someone and they truned into a portal. Great now you have 2 portals to deal with! -1 Dexterity.")
             mc.challenge_result(2, 0)
-            mc.mod_stat(dex, -1)
+            mc.mod_stat("dex", -1)
     elif op_num == "3":
         print("Pressing the red button requires a roll of 7 to complete.")
         input("Press Enter to roll the dice.")
-        num = roll_dice(mc._iq)
+        num = roll_dice(mc._int)
         if num > 10: #11-12
-            print("Critical win! You pressed the red button and it was gone before you know it! +1 Intelligence")
+            print("Critical win! You pressed the red button and it was gone before you know it! +1 Intelligence.")
             mc.challenge_result(2, 1)
-            mc.mod_stat(iq, 1)
+            mc.mod_stat("int", 1)
         elif num > 6: #7-10
             print("Win! You had trouble finding the button, but at last you got it.")
             mc.challenge_result(2, 1)
@@ -618,8 +619,8 @@ def chapter_2_challenge_mc(mc):
         else: #2-3
             print("Critical lose! You pressed the yellow one instead. Back to kindergarden again!. -1 Intelligence.")
             mc.challenge_result(2, 0)
-            mc.mod_stat(iq, -1)
-    print('                                                 *This Ends Chapter 2*')
+            mc.mod_stat("int", -1)
+    print('                                                 *End of Chapter 2*')
 
 
 def chapter_3_cutscene_mc(mc):
@@ -643,12 +644,12 @@ def chapter_3_challenge_mc(mc):
     while True: # Selection loop
         op_text_1 = "fling the dog off your leg" # Requires 8 strength to pass.
         op_text_2 = "drop the boxes and bark back" # Requires 7 dexterity to pass.
-        op_text_3 = "run away while the dog chases you" # Requires 7 IQ to pass.
+        op_text_3 = "run away while the dog chases you" # Requires 7 intelligence to pass.
         op_text = ""
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
-        print("3 [IQ]. "  + op_text_3 + ".")
+        print("3 [INT]. "  + op_text_3 + ".")
         while True: # Choosing options loop.
             options = input("Type in 1, 2, or 3: ")
             if op_num == "1" or op_num == "2" or op_num == "3":
@@ -702,7 +703,7 @@ def chapter_3_challenge_mc(mc):
     elif op_num == "3":
         print("Running away while the dog chases you requires a roll of 7 in order to complete the challenge.")
         input("Press Enter to roll the dice.")
-        num = roll_dice(mc._iq)
+        num = roll_dice(mc._int)
         if num > 10: #11-12
             print("Critical win! As you are running away, the dog gets distracted by the sprinkler!")
             mc.challenge_result(3, 1)
@@ -715,7 +716,7 @@ def chapter_3_challenge_mc(mc):
         else: #2-3
             print("Critical lose! The dog is still chasing you which cause you to trip and drop the boxes.")
             mc.challenge_result(3, 0)
-    print('                                                 *This Ends Chapter 3*')
+    print('                                                 *End of Chapter 3*')
 
 
 def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 was successful.
@@ -766,11 +767,10 @@ role_name = ""
 choice = ""
 while True:
     role = input("Please enter 1 for pizza driver, or 2 for mail courier: ")
-    role = int(role)
     if role == "1" or role == "2": # Checks if role is 1 or 2.
-        if role == 1: # Assigns role_name.
+        if role == "1": # Assigns role_name.
             role_name = "pizza driver"
-        else:
+        elif role == "2":
             role_name = "mail courier"
         
         while True: # Confirmation loop.

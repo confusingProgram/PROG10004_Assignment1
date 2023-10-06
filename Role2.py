@@ -6,7 +6,7 @@ class Mail:
         self._role = "mc"
         self._str = 1
         self._dex = -1
-        self._iq = 1
+        self._int = 1
         self._challenge_1_result = 0
         self._challenge_2_result = 0
         self._challenge_3_result = 0
@@ -18,12 +18,12 @@ class Mail:
 
     def mod_stat(self, stat, inc):
         """This method changes the stat indicated by the amount indicated"""
-        if stat == _str:
+        if stat == "str":
             self._str = self._str + inc
-        elif stat == _dex:
+        elif stat == "dex":
             self._dex = self._dex + inc
-        elif stat == _iq:
-            self._iq = self._iq + inc
+        elif stat == "int":
+            self._int = self._int + inc
 
     def challenge_result(self, chal_num, result):
         """This method will keep track of the status of completed or failed challenges"""
