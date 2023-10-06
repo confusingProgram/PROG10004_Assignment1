@@ -7,14 +7,14 @@ class Mail:
         self._role = "mc" # Short-hand of their role.
         self._str = 0 # Strength stat.
         self._dex = 0 # Dexterity stat.
-        self._chr = 1 # Charisma stat.
+        self._int = 1 # Intelligence stat.
         self._challenge_1_result = 0 # Tracks result of Challenge 1, where 0 == failure, 1 == success
         self._challenge_2_result = 0 # Tracks result of Challenge 2, where 0 == failure, 1 == success
         self._challenge_3_result = 0 # Tracks result of Challenge 3, where 0 == failure, 1 == success
     
     def __str__(self):
         """This method returns the string representation the Mail Courier object."""
-        return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._iq} Intelligence)"
+        return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._int} Intelligence)"
 
     def mod_stat(self, stat, inc):
         """This method changes the stat indicated by the amount indicated."""

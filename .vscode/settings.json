@@ -1,0 +1,7 @@
+{
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "andy",
+        "nuzrah",
+        "main"
+    ]
+}

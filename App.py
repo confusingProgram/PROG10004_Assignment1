@@ -444,7 +444,7 @@ def chapter_1_challenge_mc(mc):
     while True: # Selection loop.
         op_text_1 = "carry the boxes to your van car to deliver mail" # Requires 8 strength, +1 strength if 11-12, -1 strength if 2-3.
         op_text_2 = "use a customer's car to deliver mail" # Requires 4 dexterity, +1 dexterity if 11-12, -1 dexterity if 2.
-        op_text_3 = "use a motocycle to deliver mail" # Requires 6 intelligence, +1 intelligence if 11-12, -1 intelligence if 2-3.
+        op_text_3 = "use a motorcycle to deliver mail" # Requires 6 intelligence, +1 intelligence if 11-12, -1 intelligence if 2-3.
         op_text = "" # Tracks the option selected for text printing purposes.
         
         print("Options:")
@@ -504,7 +504,7 @@ def chapter_1_challenge_mc(mc):
             mc.challenge_result(1, 1)
             mc.mod_stat("dex", 1)
         elif num > 3: #4-10
-            print("Win! The customer didn't trust you, but gave you their car anyway .")
+            print("Win! The customer didn't trust you, but gave you their car anyway.")
             mc.challenge_result(1, 1)
         elif num > 2: #3
             print("Lose! You didn't get the car, and the customer ran over your foot! Ouch!! That's got to hurt.")
