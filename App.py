@@ -415,7 +415,7 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
 def chapter_1_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 1 for the Mail Courier"""
     print('                                        Chapter 1: Canada Post')
-    print( '                                    *Mail Courier arrives at Canada Post*'          )
+    print( '                                    *' + mc._name + ' arrives at Canada Post*'          )
     print('                                            *DING DING *        ')
     print('                                                    *DOOR OPENS ')
     print(mc._name + ': "Good morning! Have you got any boxes for me to deliver?"')
@@ -424,10 +424,10 @@ def chapter_1_cutscene_mc(mc):
     print('''      "But be careful, these boxes are heavy!"''')
     print(mc._name + ': "Okay boss! I got this!!!"')
     print()
-    print('                                             Objective: Deliver the Boxes!!!')
-    print('                I hope that this delivery goes smoothly')
-    print(  'Hmmmm... Which vehicle should I take?  ')
-    print("You could choose to deliver the boxes in your van; a customer's car; or motorbike")
+    print('                                             Objective: Deliver the boxes')
+    print(mc._name + ': "I hope that this delivery goes smoothly."')
+    print('''      "Hmmmm... Which vehicle should I take?"''')
+    print("You could choose to deliver the boxes in your van; a customer's car; or a motorbike.")
 
 
 def chapter_1_challenge_mc(mc):
