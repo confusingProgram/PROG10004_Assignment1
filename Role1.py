@@ -7,9 +7,9 @@ class Pizza:
         self._str = 0
         self._dex = 0
         self._chr = 1
-        self._challenge_1_result = 0
-        self._challenge_2_result = 0
-        self._challenge_3_result = 0
+        self._challenge_1_success = 0
+        self._challenge_1_success = 0
+        self._challenge_1_success = 0
     
     def __str__(self):
         """This method returns the string representation the object"""
@@ -26,10 +26,12 @@ class Pizza:
 
     def challenge_result(self, chal_num, result):
         """This method will keep track of the status of completed or failed challenges"""
-        if chal_num == 1:
-            self._challenge_1_result = result
+        # chal_num refers to the challenge number, result is the result of the challenge,
+        # where 0 == failure, and 1 == success
+        if chal_num == 1: 
+            self._challenge_1_success = result
         elif  chal_num == 2:
-            self._challenge_2_result = result
+            self._challenge_1_success = result
         else:
-            self._challenge_3_result = result
+            self._challenge_1_success = result
 

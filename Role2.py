@@ -18,15 +18,17 @@ class Mail:
 
     def mod_stat(self, stat, inc):
         """This method changes the stat by the amount indicated"""
-        if stat == "str":
+        if stat == _str:
             self._str = self._str + inc
-        elif stat == "dex":
+        elif stat == _dex:
             self._dex = self._dex + inc
-        elif stat == "iq":
+        elif stat == _iq:
             self._iq = self._iq + inc
 
     def challenge_result(self, chal_num, result):
         """This method will keep track of the status of completed or failed challenges"""
+        # chal_num refers to the challenge number, result is the result of the challenge,
+        # where 0 == failure, and 1 == success
         if chal_num == 1:
             self._challenge_1_success = result
         elif  chal_num == 2:
