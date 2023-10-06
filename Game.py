@@ -168,7 +168,7 @@ def chapter_2_cutscene(c1): #c1 is the character
         print('                                    *Chapter 2: On The Road*')
         print("You are driving down a road on your way to 123 Somewhere Street.")
         print(c1._name + ': "..."')
-        print('       *SQUINTS*')
+        print('      *SQUINTS*')
         print('      "What is that?"')
         print("It is an imposing boulder, impeding your path!")
         print(c1._name + ': "I should probably pull over."')
@@ -492,4 +492,156 @@ def chapter_2_challenge(c2):
                 c2.mod_stat(chr, -1)
 print('                                                 *This Ends Chapter 2*')
 
-#Chapter 2 finished
+
+def chapter_3_cutscene(c1): #c1 is the character
+    if c1._role == "pd": #pizza driver
+        print('                                    *Chapter 3: A Delicious Delivery*')
+        print(c1._name + ''': "123 Somewhere Street, here it is."''')
+        print('                                     *DING DING*                                ')
+        print('                                          *SLAM*                                ')
+        print("As you get out of the car, you're approached by a strange person.")
+        print(c1._name + ''': "Uhh, can I help you?"''')
+        print('''Stranger: "Why, yes you can. I would like those pizzas you have there."''')
+        print(c1._name + ''': "Do you live at 123 Somewhere Street?"''')
+        print('''Stranger: "If I get those pizzas, then yes."''')
+        print(c1._name + ''': "You're gonna have to step aside, I need to deliver this food."''')
+        print('''Stranger: "No can do. Those pizzas will be mine!"''')
+        print('                                     Objective: Defend the pizzas!')
+        print("Wow! They really want your pizzas! But you're determined to complete your job!")
+        print("You can either fight in hand-to-hand combat; swing open the car door to knock them out; or intimidate them.")
+    elif c1._role == "mc": # mail courier
+        print()
+
+def chapter_3_challenge(c1):
+    if c1._role == "pd": #pizza driver
+        option = ""
+        while True: # Selection loop
+            op1 = "fight hand-to-hand" # requires 7 strength
+            op2 = "open the car door" # requires 7 dexterity to pass
+            op3 = "intimidate them" # requires 7 charisma to pass
+            
+            print("Options:") # Displays options
+            print("1 [STR]. " + op1 + ".")
+            print("2 [DEX]. " + op2 + ".")
+            print("3 [CHR]. " + op3 + ".")
+
+            while True: # Choosing options loop
+                option = input("Type in 1, 2, or 3: ")
+                if option == "1":
+                    op = op1
+                    break # If user selects a valid option, options loop will exit
+                elif option == "2":
+                    op = op2
+                    break
+                elif option == "3":
+                    op = op3
+                    break
+                else:
+                    print("Error, invalid answer.")
+
+            while True: #Confirmation loop
+                choice = input("Are you sure you want to " + op + "?  Yes or No: ")
+                if choice == "Yes" or choice == "No":
+                    break # If user says Yes or No, confirmation loop will exit
+                else:
+                    print("Error, invalid answer.")
+            
+            if choice == "Yes":
+                print("You have chosen to: " + op + ".")
+                break # If user said yes, selection loop will exit.
+        
+        print("Let's get into the challenge.")
+
+        if option == "1":
+            print("Fighting hand-to-hand requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._str)
+            if num > 10: #11-12
+                print("Critical win! With one fell swing, the stranger is knocked unconscious. He'll be fine.")
+                c1.challenge_result(3, 1)
+                c1.mod_stat(str, 1)
+            elif num > 6: #7-10
+                print("Win! Your martial prowess is superior, and you defeat the stranger!")
+                c1.challenge_result(3, 1)
+            elif num > 3: #4-5
+                print("Lose! Despite your best effort, the stranger comes out on top and takes the food!")
+                c1.challenge_result(3, 0)
+            else: #2-3
+                print("Critical lose! Before you're even ready, the stranger delivers a mean right-hook! You wake up to find the stranger and the pizzas gone.")
+                c1.challenge_result(3, 0)
+        elif option == "2":
+            print("Opening the car door requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._dex)
+            if num > 10: #11-12
+                print("Critical win! The car door swings open and knocks out the stranger! That's gonna leave a mark.")
+                c1.challenge_result(3, 1)
+            elif num > 6: #5-10
+                print("Win! You catch the stranger off guard, knocking them off their feet and leaving them dazed.")
+                c1.challenge_result(3, 1)
+            elif num > 3: #4-5
+                print("Lose! The car door catches on your foot, which the stranger uses to their advantage, as they take the pizzas.")
+                c1.challenge_result(3, 0)
+            else: #2-3
+                print("Critical lose! Your footing wasn't in the right place, and you accidentally hit yourself with the door! The stranger flees with the pizzas.")
+                c1.challenge_result(3, 0)
+        elif option == "3":
+            print("Intimidating the stranger requires a roll of 7 to complete.")
+            input("Press Enter to roll the dice.")
+            num = roll_dice(c1._chr)
+            if num > 10: #11-12
+                print(c1._name + ''': "Are you sure about this? You do not want to fight me."''')
+                print('''Stranger: "I am very sure! As sure as those pizzas being tasty!"''')
+                print("You swiftly step forward and grab their collar, picking them up.")
+                print(c1._name + ''': "I implore you to reconsider."''')
+                print('''Stranger: "Ack- Woah! I just remembered I had a big lunch!"''')
+                print("Critical win! Quite the unassuming pizza driver!")
+                c1.challenge_result(3, 1)
+            elif num > 6: #7-10
+                print(c1._name + ''': "You know, I've had a real bad day today. My boss yelled at me."''')
+                print('      "I had to deal with a giant boulder. And now I have to deal with you!"')
+                print('''      "I've been looking for an outlet for my anger!"''')
+                print('''Stranger: "Hey, you know what?! You can keep the pizzas."''')
+                print('''      "I just remembered I had an important business meeting. Haha..."''')
+                print('      *FLEES*')
+                print("Win! You have your own important business to tend to.")
+                c1.challenge_result(3, 1)
+            elif num > 3: #4-5
+                print(c1._name + ''': "You think you can beat me? Don't make me laugh. Hah!"''')
+                print('''Stranger: *KICK*''')
+                print(c1._name + ''': "Ow!"''')
+                print('''Stranger: "I just did, now the pizzas are mine!"''')
+                print("Lose! Overconfidence got the best of you.")
+                c1.challenge_result(3, 0)
+            else: #2-3
+                print(c1._name + ''': "Can you not do this? I'm not really a fighter."''')
+                print('''Stranger: "Oh, this will be easy!"''')
+                print('With their newfound confidence, the stranger steals the pizzas!')
+                print("Critical lose! You can't show that you're scared.")
+                c1.challenge_result(3, 0)
+    if c1._role == "mc":
+        print()
+    print('                                                 *End of Chapter 3*')
+
+def ending_cutscene(c1):
+    print('                                                 *Epilogue*')
+    if c1._role == "pd":
+        if c1._challenge_3_result == 1:
+            print("Exhausted, you make your way up the steps of the house.")
+            print('                                     *DING DONG*                                ')
+            print('                                     *CREEEEAK*                                ')
+            print(c1._name + ''': "Hello, order of 3 pepperonis, and 12 pc. wings?"''')
+            print('''Homeowner: "Yep, that's right! You look a little rough, everything alright?"''')
+            print(c1._name + ''': "Just part of a day's work."''')
+            print('''Homeowner: "Well, here's a tip, you deserve it."''')
+            print(c1._name + ''': "Thank you. Have a nice day."''')
+            print('                                     *SLAM*                                ')
+            print("Congratulations! You delivered the pizzas!")
+        elif c1._challenge_3_result == 0:
+            print('                                         *RING RING*                                ')
+            print('                                     *SLAM*                                ')
+            print("Having lost the pizzas, you regretfully phone your boss as you get back into the car.")
+            print('Boss: "WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
+            print("Game over! You failed to deliver the pizzas!")
+    elif c1._role == "mc"
+
