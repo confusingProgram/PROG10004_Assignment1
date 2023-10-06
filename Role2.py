@@ -1,6 +1,6 @@
 """This module contains Role 2, AKA the Mail Courier, including the object class, its variables, and methods"""
 class Mail:
-    """This class contains the Mail Courier object,  with the attributes Strength, Dexterity, and Intelligence"""
+    """This class contains the Mail Courier object, with the attributes Strength, Dexterity, and Intelligence"""
     def __init__(self, name):
         self._name = name
         self._role = "mc"
@@ -17,7 +17,7 @@ class Mail:
         return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._iq} Intelligence)"
 
     def mod_stat(self, stat, inc):
-        """This method changes the stat by the amount indicated"""
+        """This method changes the stat indicated by the amount indicated"""
         if stat == _str:
             self._str = self._str + inc
         elif stat == _dex:
