@@ -426,5 +426,10 @@ def ending_cutscene(c1):
             print(c1._name + ''': "Thank you. Have a nice day."''')
             print('                                     *SLAM*                                ')
             print("Congratulations! You delivered the pizzas!")
-        elif c1._challenge_3_result == 1:
-            print()
+        elif c1._challenge_3_result == 0:
+            print('                                         *RING RING*                                ')
+            print('                                     *SLAM*                                ')
+            print("Having lost the pizzas, you regretfully phone your boss as you get back into the car.")
+            print('Boss: "WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
+            print("Game over! You failed to deliver the pizzas!")
+    elif c1._role == "mc"
