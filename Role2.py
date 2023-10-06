@@ -13,11 +13,11 @@ class Mail:
 
     
     def __str__(self):
-        """This method returns the string representation the object"""
+        """This method returns the string representation the Mail Courier object."""
         return f"{self.name}: {self._str} Strength, {self._dex} Dexterity, {self._iq} Intelligence)"
 
     def mod_stat(self, stat, inc):
-        """This method changes the stat indicated by the amount indicated"""
+        """This method changes the stat indicated by the amount indicated."""
         if stat == "str":
             self._str = self._str + inc
         elif stat == "dex":
@@ -26,7 +26,7 @@ class Mail:
             self._int = self._int + inc
 
     def challenge_result(self, chal_num, result):
-        """This method will keep track of the status of completed or failed challenges"""
+        """This method will keep track of the status of completed or failed challenges."""
         # chal_num refers to the challenge number, result is the result of the challenge,
         # where 0 == failure, and 1 == success
         if chal_num == 1:
