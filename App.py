@@ -8,21 +8,21 @@ from Game import roll_dice
 # pd == Pizza Driver
 def chapter_1_cutscene_pd(pd): #pd is the character
     """This method contains the game cutscene for Chapter 1 for the Pizza Driver"""
-    print('*Chapter 1: Supernova Pizza*'.center(100, " "))
+    print('''*Chapter 1: Marino's Pizzeria*'''.center(100, " "))
     print('*RING RING RING*'.center(100, " "))
     print('*KERCHUNK*'.center(100, " "))
-    print('Boss: "Hello, welcome to Supernova Pizza, how can I help you?"')
+    print('Marino: "Hello, welcome to Supernova Pizza, how can I help you?"')
     print('''      "..Uh huh... Uh huh... Got it, we'll have your order there in no time. Goodbye."''')
     print('*KERCHUNK*'.center(100, " "))
-    print('Boss: "Alright ' + pd._name + ', we got a new order for 123 Somewhere Street."')
+    print('Marino: "Alright ' + pd._name + ', we got a new order for 123 Somewhere Street."')
     print('      "The order is 3 pepperoni pizzas, and 12 pc. wings. We have some already. Go load them into your car."')
-    print('      "You better show these customers that Supernova Pizza is the fastest restaurant around!"')
     print('      "And no slacking! Last time, I had a customer complain that their pizza was so cold, it could cool their drinks!"')
+    print('      "Too slow, and your brother Romano will beat you again! Kid sure earned the name "Rocket"! Ahaha!"')
     print()
     print('Objective: Load The Order'.center(100, " "))
-    print('Gee, they sure sounds angry!')
+    print('''It would suck to be beated by Romano again!''')
     print('Now... how to load the pizzas into the car?')
-    print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss to carry them.""")
+    print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade Marino to carry them.""")
 
 
 def chapter_1_challenge_pd(pd): 
@@ -31,7 +31,7 @@ def chapter_1_challenge_pd(pd):
     while True: # Selection loop
         op_text_1 = "carry pizzas to the car" # Requires 6 strength, +1 strength if 11-12, -1 strength on loss if 2-3.
         op_text_2 = "use a cart to bring the pizzas" # Requires 4 dexterity to pass, +1 dexterity if 11-12, -1 charisma on loss if 2-3.
-        op_text_3 = "persuade your boss to carry them" # Requires 8 charisma to pass, +1 charisma if 11-12, -1 charisma on loss if 3-4.
+        op_text_3 = "persuade Marino to carry them" # Requires 8 charisma to pass, +1 charisma if 11-12, -1 charisma on loss if 3-4.
         op_text = "" # Tracks the option selected for text printing purposes.
         
         print("Options:")
@@ -101,33 +101,33 @@ def chapter_1_challenge_pd(pd):
             pd.challenge_result(1, 0)
             pd.mod_stat("dex", -1)
     elif op_num == "3":
-        print("Persuading your boss to carry them requires a roll of 8 to complete.")
+        print("Persuading Marino to carry them requires a roll of 8 to complete.")
         input("Press Enter to roll the dice.")
         num = roll_dice(pd._chr)
         if num > 10: #11-12
-            print('Boss: "Hey! What are you standing around for?!"')
+            print('Marino: "Hey! What are you standing around for?!"')
             print(pd._name + ': "Boss, can you carry the pizzas for me? I uhhh, really need to use the bathroom, like really really badly."')
-            print('Boss: "..."')
+            print('Marino: "..."')
             print('      "Fine, but make it quick!"')
             print("Critical win! Huh, guess you're doing even less work. +1 Charisma")
             pd.challenge_result(1, 1)
             pd.mod_stat("chr", 1)
         elif num > 7: #8-10
             print('*SNAP SNAP SNAP*'.center(100, " "))
-            print('Boss: "Hey! Are you even listening?!"')
+            print('Marino: "Hey! Are you even listening?!"')
             print('      "Geez, do I have to do everything myself?!"')
             print('       *GRUMBLES*') 
             print("Win! And you didn't even say anything.")
             pd.challenge_result(1, 1)
         elif num > 3: #4-7
             print(pd._name + ': "Boss, can you carry the pizzas for me? I uhhh, forgot how to walk."')
-            print('Boss: "What do you mean you forgot how to walk? Just do your job!"')
+            print('Marino: "What do you mean you forgot how to walk? Just do your job!"')
             print("Lose! Not the most convincing argument I've heard recently.")
             pd.challenge_result(1, 0)
         else: #2-3
             print(pd._name + ''': "Boss, can you carry the pizzas for me? I'll do you a favour."''')
             print('       *WINK*')
-            print('Boss: "..."')
+            print('Marino: "..."')
             print('      "How about you do me this favour, and carry the darn order to the car?!"')
             print("Critical lose! Very daring to ask your boss a favour when you're already on their bad side. -1 Charisma.")
             pd.challenge_result(1, 0)
@@ -412,7 +412,7 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
         print('*RING... RING...*'.center(100, " "))
         print('*SLAM*'.center(100, " "))
         print("Having lost the pizzas, you regretfully phone your boss as you get back into the car.")
-        print('Boss: "Hello?... WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
+        print('Marino: "Hello?... WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
         print("Game over! You failed to deliver the pizzas!")
 
 
