@@ -839,6 +839,7 @@ while True:
 print("Let's begin the journey!")
 print("")
 
+# Game introduction, and role confirmation is complete.
 
 
 

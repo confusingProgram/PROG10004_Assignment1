@@ -1,16 +1,16 @@
-"""This module contains Role 2, AKA the Mail Courier, including the object class, its variables, and methods"""
+"""This module contains Role 2, AKA the Mail Courier, including the object class, its variables, and methods."""
 class Mail:
-    """This class contains the Mail Courier object, with the attributes Strength, Dexterity, and Intelligence"""
+    """This class contains the Mail Courier object, with the attributes Strength, Dexterity, and Intelligence."""
     def __init__(self, name):
-        self._name = name
-        self._role = "mc"
-        self._str = 1
-        self._dex = -1
-        self._int = 1
-        self._challenge_1_result = 0
-        self._challenge_2_result = 0
-        self._challenge_3_result = 0
-
+        """This method executes when a Mail Courier object is created, and sets default values."""
+        self._name = name # Name of the character.
+        self._role = "mc" # Short-hand of their role.
+        self._str = 0 # Strength stat.
+        self._dex = 0 # Dexterity stat.
+        self._chr = 1 # Charisma stat.
+        self._challenge_1_result = 0 # Tracks result of Challenge 1, where 0 == failure, 1 == success
+        self._challenge_2_result = 0 # Tracks result of Challenge 2, where 0 == failure, 1 == success
+        self._challenge_3_result = 0 # Tracks result of Challenge 3, where 0 == failure, 1 == success
     
     def __str__(self):
         """This method returns the string representation the Mail Courier object."""

@@ -1,15 +1,16 @@
-"""This module contains Role 1, AKA the Pizza Driver, including the object class, its variables, and methods"""
+"""This module contains Role 1, AKA the Pizza Driver, including the object class, its variables, and methods."""
 class Pizza:
-    """This class contains the Pizza Driver object, with the attributes Strength, Dexterity, and Charisma"""
+    """This class contains the Pizza Driver object, with the attributes Strength, Dexterity, and Charisma."""
     def __init__(self, name):
-        self._name = name
-        self._role = "pd"
-        self._str = 0
-        self._dex = 0
-        self._chr = 1
-        self._challenge_1_result = 0
-        self._challenge_2_result = 0
-        self._challenge_3_result = 0
+        """This method executes when a Pizza Driver object is created, and sets default values."""
+        self._name = name # Name of the character.
+        self._role = "pd" # Short-hand of their role.
+        self._str = 0 # Strength stat.
+        self._dex = 0 # Dexterity stat.
+        self._chr = 1 # Charisma stat.
+        self._challenge_1_result = 0 # Tracks result of Challenge 1, where 0 == failure, 1 == success
+        self._challenge_2_result = 0 # Tracks result of Challenge 2, where 0 == failure, 1 == success
+        self._challenge_3_result = 0 # Tracks result of Challenge 3, where 0 == failure, 1 == success
     
     def __str__(self):
         """This method returns the string representation the Pizza Driver object."""
@@ -34,4 +35,3 @@ class Pizza:
             self._challenge_2_result = result
         else:
             self._challenge_3_result = result
-
