@@ -1,7 +1,5 @@
 """This module contains the game logic such as methods."""
 import random
-from Role1 import Pizza
-from Role2 import Mail
 
 def roll_dice(stat): #stat = pd._str for example
     """This function will randomly pick integers ranging from 1 to 6 (inclusive), 

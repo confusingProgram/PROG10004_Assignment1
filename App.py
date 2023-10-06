@@ -8,18 +8,18 @@ from Game import roll_dice
 # pd == Pizza Driver
 def chapter_1_cutscene_pd(pd): #pd is the character
     """This method contains the game cutscene for Chapter 1 for the Pizza Driver"""
-    print('                                    *Chapter 1: Supernova Pizza*')
-    print('                                         *RING RING RING*                                ')
-    print('                                             *KERCHUNK*                                      ')
+    print('*Chapter 1: Supernova Pizza*'.center(100, " "))
+    print('*RING RING RING*'.center(100, " "))
+    print('*KERCHUNK*'.center(100, " "))
     print('Boss: "Hello, welcome to Supernova Pizza, how can I help you?"')
     print('''      "..Uh huh... Uh huh... Got it, we'll have your order there in no time. Goodbye."''')
-    print('                                             *KERCHUNK*                                      ')
+    print('*KERCHUNK*'.center(100, " "))
     print('Boss: "Alright ' + pd._name + ', we got a new order for 123 Somewhere Street."')
     print('      "The order is 3 pepperoni pizzas, and 12 pc. wings. We have some already. Go load them into your car."')
     print('      "You better show these customers that Supernova Pizza is the fastest restaurant around!"')
     print('      "And no slacking! Last time, I had a customer complain that their pizza was so cold, it could cool their drinks!"')
     print()
-    print('                                     Objective: Load The Order')
+    print('Objective: Load The Order'.center(100, " "))
     print('Gee, they sure sounds angry!')
     print('Now... how to load the pizzas into the car?')
     print("""You could try simply carrying out the pizzas to your car; use a cart; or you're feeling adventurous, persuade your boss to carry them.""")
@@ -63,6 +63,7 @@ def chapter_1_challenge_pd(pd):
             break # If user said "Yes", selection loop will exit.
         
     print("Let's get into the challenge.")
+    print()
     if op_num == "1":
         print("Carrying the pizzas to the car requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
@@ -112,7 +113,7 @@ def chapter_1_challenge_pd(pd):
             pd.challenge_result(1, 1)
             pd.mod_stat("chr", 1)
         elif num > 7: #8-10
-            print('                                         *SNAP SNAP SNAP*                                ')
+            print('*SNAP SNAP SNAP*'.center(100, " "))
             print('Boss: "Hey! Are you even listening?!"')
             print('      "Geez, do I have to do everything myself?!"')
             print('       *GRUMBLES*') 
@@ -131,21 +132,22 @@ def chapter_1_challenge_pd(pd):
             print("Critical lose! Very daring to ask your boss a favour when you're already on their bad side. -1 Charisma.")
             pd.challenge_result(1, 0)
             pd.mod_stat("chr", -1)
-    print('                                                 *End of Chapter 1*')
-
+    print('*End of Chapter 1*'.center(100, " "))
+    print()
 
 def chapter_2_cutscene_pd(pd): 
     """This method contains the game cutscene for Chapter 2 for the Pizza Driver"""
-    print('                                    *Chapter 2: On The Road*')
+    print('*Chapter 2: On The Road*'.center(100, " "))
     print("You are driving down a road on your way to 123 Somewhere Street.")
     print(pd._name + ': "..."')
     print('      *SQUINTS*')
     print('      "What is that?"')
     print("It is an imposing boulder, impeding your path!")
     print(pd._name + ': "I should probably pull over."')
-    print('                                     *SCREEEEEEEEEEEECH*                                ')
+    print('*SCREEEEEEEEEEEECH*'.center(100, " "))
     print('''Passerby: "Wow, that is a large boulder. I hope you don't plan on asking me for help."''')
-    print('                                     Objective: Move The Boulder')
+    print()
+    print('Objective: Move The Boulder'.center(100, " "))
     print("Who just leaves a boulder in the middle of a road? An urban one at that. Where did this come from?")
     print("The boulder is propped up against another large rock, but you can drive around that one if you can move the large boulder first.")
     print("How on earth are you going to move the boulder?")
@@ -190,6 +192,7 @@ def chapter_2_challenge_pd(pd):
             break # If user said "Yes", selection loop will exit.
     
     print("Let's get into the challenge.")
+    print()
     if op_num == "1":
         print("Pushing it yourself requires a roll of 8 to complete.")
         input("Press Enter to roll the dice.")
@@ -258,15 +261,16 @@ def chapter_2_challenge_pd(pd):
             print("Critical lose! You'll be lucky if your boss doesn't fire you after this. -1 Charisma.")
             pd.challenge_result(2, 0)
             pd.mod_stat("chr", -1)
-    print('                                                 *End of Chapter 2*')
+    print('*End of Chapter 2*'.center(100, " "))
+    print()
 
 
 def chapter_3_cutscene_pd(pd): 
     """This method contains the game cutscene for Chapter 3 for the Pizza Driver"""
-    print('                                    *Chapter 3: A Delicious Delivery*')
+    print('*Chapter 3: A Delicious Delivery*'.center(100, " "))
     print(pd._name + ''': "123 Somewhere Street, here it is."''')
-    print('                                     *DING DING*                                ')
-    print('                                          *SLAM*                                ')
+    print('*DING... DING...*'.center(100, " "))
+    print('*SLAM*'.center(100, " "))
     print("As you get out of the car, you're approached by a strange person.")
     print(pd._name + ''': "Uhh, can I help you?"''')
     print('''Stranger: "Why, yes you can. I would like those pizzas you have there."''')
@@ -274,7 +278,8 @@ def chapter_3_cutscene_pd(pd):
     print('''Stranger: "If I get those pizzas, then yes."''')
     print(pd._name + ''': "You're gonna have to step aside, I need to deliver this food."''')
     print('''Stranger: "No can do. Those pizzas will be mine!"''')
-    print('                                     Objective: Defend The Pizzas!')
+    print()
+    print('Objective: Defend The Pizzas!'.center(100, " "))
     print("Wow! They really want your pizzas! But you're determined to complete your job!")
     print("You can either fight in hand-to-hand combat; swing open the car door to knock them out; or intimidate them.")
 
@@ -317,6 +322,7 @@ def chapter_3_challenge_pd(pd):
             break # If user said "Yes", selection loop will exit.
     
     print("Let's get into the challenge.")
+    print()
     if op_num == "1":
         print("Fighting hand-to-hand requires a roll of 7 to complete.")
         input("Press Enter to roll the dice.")
@@ -384,26 +390,27 @@ def chapter_3_challenge_pd(pd):
             print('With their newfound confidence, the stranger steals the pizzas!')
             print("Critical lose! You can't show that you're scared.")
             pd.challenge_result(3, 0)
-    print('                                                 *End of Chapter 3*')
+    print('*End of Chapter 3*'.center(100, " "))
+    print()
 
 
 def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 was successful.
     """This method contains the ending cutscene for the Pizza Driver"""
-    print('                                                 *Ending Cutscene*')
+    print('*Ending Cutscene*'.center(100, " "))
     if pd._challenge_3_result == 1:
+        print('*DING DONG*'.center(100, " "))
+        print('*CREEEEAK*'.center(100, " "))
         print("Exhausted, you make your way up the steps of the house.")
-        print('                                     *DING DONG*                                ')
-        print('                                     *CREEEEAK*                                ')
         print(pd._name + ''': "Hello, order of 3 pepperonis, and 12 pc. wings?"''')
         print('''Homeowner: "Yep, that's right! You look a little rough, everything alright?"''')
         print(pd._name + ''': "Just part of a day's work."''')
         print('''Homeowner: "Well, here's a tip, you deserve it."''')
         print(pd._name + ''': "Thank you. Have a nice day."''')
-        print('                                     *SLAM*                                ')
+        print('*SLAM*'.center(100, " "))
         print("Congratulations! You delivered the pizzas!")
     elif pd._challenge_3_result == 0:
-        print('                                         *RING... RING...*                                ')
-        print('                                     *SLAM*                                ')
+        print('*RING... RING...*'.center(100, " "))
+        print('*SLAM*'.center(100, " "))
         print("Having lost the pizzas, you regretfully phone your boss as you get back into the car.")
         print('Boss: "Hello?... WHAT DO YOU MEAN YOU LOST THE PIZZAS?!"')
         print("Game over! You failed to deliver the pizzas!")
@@ -414,17 +421,18 @@ def ending_cutscene_pd(pd): # Win condition is dependant on whether challenge 3 
 #mc == Mail Courier
 def chapter_1_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 1 for the Mail Courier"""
-    print('                                        Chapter 1: Canada Post')
-    print( '                                    *' + mc._name + ' arrives at Canada Post*'          )
-    print('                                            *DING DING *        ')
-    print('                                                    *DOOR OPENS ')
+    print('Chapter 1: Canada Post'.center(100, " "))
+    x = '*' + mc._name + ' arrives at Canada Post*'
+    print(x.center(100, " "))
+    print('*DING DING *'.center(100, " "))
+    print('*DOOR OPENS'.center(100, " "))
     print(mc._name + ': "Good morning! Have you got any boxes for me to deliver?"')
     print('Boss: "Good morning ' + mc._name + ', I have the boxes right here."')
     print('''      "You have to deliver it to house number 123 on Somewhere Street"''')
     print('''      "But be careful, these boxes are heavy!"''')
     print(mc._name + ': "Okay boss! I got this!!!"')
     print()
-    print('                                             Objective: Deliver The Boxes')
+    print('Objective: Deliver The Boxes'.center(100, " "))
     print(mc._name + ': "I hope that this delivery goes smoothly."')
     print('''      "Hmmmm... Which vehicle should I take?"''')
     print("You could choose to deliver the boxes in your van; a customer's car; or a motorbike.")
@@ -468,7 +476,7 @@ def chapter_1_challenge_mc(mc):
             break # If user said "Yes", selection loop will exit.
     
     print("Alright, Let's start the challenge!!")
-    
+    print()
     if op_num == "1":
         print("Carrying the boxes to your van car to deliver mail requires a roll of 8 to complete.")
         input("Press Enter to roll the dice.")
@@ -524,19 +532,20 @@ def chapter_1_challenge_mc(mc):
             print("You left the motorbike unattended, running, then someone stole it! I mean, who does that?!. -1 Intelligence.")
             mc.challenge_result(1, 0)
             mc.mod_stat("int", -1)
-    print('                                                 *End of Chapter 1*')
+    print('*End of Chapter 1*'.center(100, " "))
+    print()
 
 
 def chapter_2_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 2 for the Mail Courier"""
-    print('                                    *Chapter 2: On Your Journey*')
+    print('*Chapter 2: On Your Journey*'.center(100, " "))
     print("You are making your way down to Somewhere Street, when you suddenly stop.")
-    print('                                            *SCREEECHHH*')
+    print('*SCREEECHHH*'.center(100, " "))
     print(mc._name + ': "What is that?!"')
     print("A random portal just popped up in the middle of the street!")
     print(mc._name + ''': "I'll have to pull over to the side first ."''')
     print()
-    print('                                     Objective: Close The Portal')
+    print('Objective: Close The Portal'.center(100, " "))
     print(mc._name +': "Who just opens a portal in the middle of the street? This is not Harry Potter!"')
     print("You could just drive into it, however you don't know where you are going to end up. It's better if you close the portal.")
     print("How are you going to close the portal?")
@@ -581,6 +590,7 @@ def chapter_2_challenge_mc(mc):
             break # If user said "Yes", selection loop will exit.
     
     print("Alright, Let's start the challenge!!")
+    print()
     if op_num == "1":
         print("Pushing the boulder into the portal requires a roll of 6 to complete.")
         input("Press Enter to roll the dice.")
@@ -635,21 +645,23 @@ def chapter_2_challenge_mc(mc):
             print("Critical lose! You pressed the yellow one instead. Back to kindergarden again!. -1 Intelligence.")
             mc.challenge_result(2, 0)
             mc.mod_stat("int", -1)
-    print('                                                 *End of Chapter 2*')
+    print('*End of Chapter 2*'.center(100, " "))
+    print()
 
 
 def chapter_3_cutscene_mc(mc):
     """This method contains the game cutscene for Chapter 3 for the Mail Courier"""
-    print('                         *Chapter 3: A Dreadful Delivery*')
+    print('*Chapter 3: A Dreadful Delivery*'.center(100, " "))
     print(mc._name + ''': "123 Somewhere Street, OH! Found it!"''')
     print('You get out of the vehicle and make your way to get the boxes out.')
-    print('                                          *SLAM*                                ')
+    print('*SLAM*'.center(100, " "))
     print("As you are approaching the main door, a dog runs up to you!")
     print(mc._name + ''': "ohh, what do we have here?"''')
     print('''Dog: *BARK* *WOOF* *WOOF*''')
     print('''Even though the dog seems nice, it starts biting your leg!"''')
-    print('                                     Objective: Protect The Boxes!')
-    print("wooh, this dog is really chewing you leg down. How are you going to make sure that the boxes are kept safe!")
+    print()
+    print('Objective: Protect The Boxes!'.center(100, " "))
+    print("Woah, this dog is really chewing your leg down. How are you going to make sure the boxes are kept safe?")
     print("You could try to fling the dog off your leg; drop the boxes and bark back; or run away while the dog chases you.")
 
 
@@ -691,6 +703,7 @@ def chapter_3_challenge_mc(mc):
             break # If user said "Yes", selection loop will exit.
 
     print("Let's get the challenge started.")
+    print()
     if op_num == "1":
         print("Flinging the dog off your leg requires a roll of 8 in order to complete the challenge.")
         input("Press Enter to roll the dice.")
@@ -739,32 +752,33 @@ def chapter_3_challenge_mc(mc):
         else: #2-3
             print("Critical lose! The dog is still chasing you which cause you to trip and drop the boxes.")
             mc.challenge_result(3, 0)
-    print('                                                 *End of Chapter 3*')
+    print('*End of Chapter 3*'.center(100, " "))
+    print()
 
 
 def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 was successful.
     """This method contains the ending cutscene for the Mail Courier"""
-    print('                                                 *Ending Cutscene*')
+    print('*Ending Cutscene*'.center(100, " "))
     if mc._challenge_3_result == 1:
         print("As you make your way up the steps, you give a sigh of relief after that dog attack.")
         print("Someone should put that dog on a leash.")
-        print('                                     *DING DONG*                                ')
-        print('                                     *CREEEEAK*                                ')
-        print(mc._name + ''': "Hello, I have some packages for the owner of 123 Somewhere Street."''')
+        print('*DING DONG*'.center(100, " "))
+        print('*CREEEEAK*'.center(100, " "))
+        print(mc._name + ''': "Hello, I have some boxes for the owner of 123 Somewhere Street."''')
         print('      "Are you the owner?"')
         print('''Homeowner: "Yep, that's right! Wow, you have a nasty rip in your pant leg."''')
         print(mc._name + ''': "Yeah, neighbourhood dog is out, it seems."''')
         print('''Homeowner: "I always tell my neighbour to put their dog on a leash!"''')
         print('''      "I oughta call the Home Owner's Assocation!"''')
         print('''      "Have a good day!"''')
-        print('                                     *SLAM*                                ')
-        print("Congratulations! You delivered the packages!")
+        print('*SLAM*'.center(100, " "))
+        print("Congratulations! You delivered the boxes!")
     elif mc._challenge_3_result == 0:
-        print("The packages got damaged in the attack, not to mention your own injuries!")
+        print("The boxes got damaged in the attack, not to mention your own injuries!")
         print("You give your boss a call to let them know what happened.")
-        print('                                         *RING... RING...*                                ')
-        print('Boss: "Hello?... The packages were damaged? How could this happen?!"')
-        print("Game over! You failed to deliver the packages!")
+        print('*RING... RING...*'.center(100, " "))
+        print('Boss: "Hello?... The boxes were damaged? How could this happen?!"')
+        print("Game over! You failed to deliver the boxes!")
 
 
 
