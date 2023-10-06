@@ -417,7 +417,7 @@ def chapter_1_cutscene_mc(mc):
     print('                                        Chapter 1: Canada Post')
     print( '                                    * Mail Courier arrives at Canada Post*'          )
     print('                                            *DING DING *        ')
-    print('                                                    *Door Opens ')
+    print('                                                    *DOOR OPENS ')
     print(                              "Good morning! Have you got any boxes for me to deliver?")
     print(          'Boss: "Good morning '+ mc.name +', I have the boxes right here."')
     print(              'Boss: "You have to deleiver it to House number 123 on That Street"')
@@ -678,7 +678,7 @@ def chapter_3_challenge_mc(mc):
             print("Win! You try to flicking the dog off, but he tired so he leaves.")
             mc.challenge_result(3, 1)
         elif num > 3: #4-7
-            print("Lose! The dog is more aggresive and bites you even harder")
+            print("Lose! The dog is more aggressive and bites you even harder")
             mc.challenge_result(3, 0)
         else: #2-3
             print("Critical lose! The dog's bite so severe that you end up in a hospital.")
@@ -704,7 +704,7 @@ def chapter_3_challenge_mc(mc):
         input("Press Enter to roll the dice.")
         num = roll_dice(mc._iq)
         if num > 10: #11-12
-            print("Critical win! As you are runing away, the dog gets distracted by the sprinkler!")
+            print("Critical win! As you are running away, the dog gets distracted by the sprinkler!")
             mc.challenge_result(3, 1)
         elif num > 6: #7-10
             print("Win! Another dog passes by and the dog goes to it. That's one way to get away.")
@@ -720,7 +720,27 @@ def chapter_3_challenge_mc(mc):
 
 def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 was successful.
     """This method contains the ending cutscene for the Mail Courier"""
-    print()
+    print('                                                 *Ending Cutscene*')
+    if mc._challenge_3_result == 1:
+        print("As you make your way up the steps, you give a sigh of relief after that dog attack.")
+        print("Someone should put that dog on a leash.")
+        print('                                     *DING DONG*                                ')
+        print('                                     *CREEEEAK*                                ')
+        print(pd._name + ''': "Hello, I have some packages for the owner of 123 Somewhere Street."''')
+        print('      "Are you the owner?"')
+        print('''Homeowner: "Yep, that's right! Wow, you have a nasty rip in your pant leg."''')
+        print(pd._name + ''': "Yeah, neighbourhood dog is out, it seems."''')
+        print('''Homeowner: "I always tell my neighbour to put their dog on a leash!"''')
+        print('''      "I oughta call the Home Owner's Assocation!"''')
+        print('''      "Have a good day!"''')
+        print('                                     *SLAM*                                ')
+        print("Congratulations! You delivered the packages!")
+    elif mc._challenge_3_result == 0:
+        print("The packages got damaged in the attack, not to mention your own injuries!")
+        print("You give your boss a call to let them know what happened.")
+        print('                                         *RING... RING...*                                ')
+        print('Boss: "Hello?... The packages were damaged? How could this happen?!"')
+        print("Game over! You failed to deliver the packages!")
 
 
 
