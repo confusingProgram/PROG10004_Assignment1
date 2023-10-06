@@ -33,5 +33,5 @@ class Mail:
             self._challenge_1_result = result
         elif  chal_num == 2:
             self._challenge_2_result = result
-        else:
+        elif  chal_num == 3:
             self._challenge_3_result = result
