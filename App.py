@@ -419,7 +419,7 @@ def chapter_1_cutscene_mc(mc):
     print('                                            *DING DING *        ')
     print('                                                    *DOOR OPENS ')
     print(mc._name + ': "Good morning! Have you got any boxes for me to deliver?"')
-    print('Boss: "Good morning ' + mc.name + ', I have the boxes right here."')
+    print('Boss: "Good morning ' + mc._name + ', I have the boxes right here."')
     print('''      "You have to deliver it to house number 123 on Somewhere Street"''')
     print('''      "But be careful, these boxes are heavy!"''')
     print(mc._name + ': "Okay boss! I got this!!!"')
@@ -438,14 +438,22 @@ def chapter_1_challenge_mc(mc):
         op_text_2 = "use a customer's car to deliver mail" # Requires 4 dexterity, +1 dexterity if 11-12, -1 dexterity if 2.
         op_text_3 = "use a motocycle to deliver mail" # Requires 6 intelligence, +1 intelligence if 11-12, -1 intelligence if 2-3.
         op_text = "" # Tracks the option selected for text printing purposes.
+        
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
         print("3 [INT]. " +  op_text_3 + ".")
         while True: # Choosing options loop.
             op_num = input("Type in 1, 2, or 3: ")
-            if op_num == "1" or op_num == "2" or op_num == "3":
-                break # If user selects a valid op_num, then options loop will exit.
+            if op_num == "1":
+                op_text = op_text_1
+                break # If user selects a valid op_num, options loop will exit.
+            elif op_num == "2":
+                op_text = op_text_2
+                break
+            elif op_num == "3":
+                op_text = op_text_3
+                break
             else:
                 print("Error, invalid answer.")
         while True: #Confirmation loop.
@@ -526,7 +534,7 @@ def chapter_2_cutscene_mc(mc):
     print('                                            *SCREEECHHH*')
     print(mc._name + ': "What is that?!"')
     print("A random portal just popped up in the middle of the street!")
-    print('''mc._name + ': "I'll have to pull over to the side first ."''')
+    print(mc._name + ''': "I'll have to pull over to the side first ."''')
     print()
     print('                                     Objective: Close The Portal')
     print(mc._name +': "Who just opens a portal in the middle of the street? This is not Harry Potter!"')
@@ -543,14 +551,22 @@ def chapter_2_challenge_mc(mc):
         op_text_2 = "use a ray gun" # Requires 8 dexterity to pass, +1 dexterity if 11-12, -1 dexterity on loss if 2-3.
         op_text_3 = "press the button" # Requires 7 intelligence to pass, +1 intelligence if 11-12, -1 intelligence on loss if 2-3.
         op_text = ""
+
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
         print("3 [INT]. "  + op_text_3 + ".")
         while True: # Choosing options loop.
-            options = input("Type in 1, 2, or 3: ")
-            if op_num == "1" or op_num == "2" or op_num == "3":
-                break # If user selects a valid op_num, then options loop will exit.
+            op_num = input("Type in 1, 2, or 3: ")
+            if op_num == "1":
+                op_text = op_text_1
+                break # If user selects a valid op_num, options loop will exit.
+            elif op_num == "2":
+                op_text = op_text_2
+                break
+            elif op_num == "3":
+                op_text = op_text_3
+                break
             else:
                 print("Error, invalid answer.")
         while True: # Confirmation loop.
@@ -645,14 +661,22 @@ def chapter_3_challenge_mc(mc):
         op_text_2 = "drop the boxes and bark back" # Requires 7 dexterity to pass.
         op_text_3 = "run away while the dog chases you" # Requires 7 intelligence to pass.
         op_text = ""
+
         print("Options:")
         print("1 [STR]. " + op_text_1 + ".")
         print("2 [DEX]. " + op_text_2 + ".")
         print("3 [INT]. "  + op_text_3 + ".")
         while True: # Choosing options loop.
-            options = input("Type in 1, 2, or 3: ")
-            if op_num == "1" or op_num == "2" or op_num == "3":
-                break # If user selects a valid op_num, then options loop will exit.
+            op_num = input("Type in 1, 2, or 3: ")
+            if op_num == "1":
+                op_text = op_text_1
+                break # If user selects a valid op_num, options loop will exit.
+            elif op_num == "2":
+                op_text = op_text_2
+                break
+            elif op_num == "3":
+                op_text = op_text_3
+                break
             else:
                 print("Error, invalid answer.")
         while True: # Confirmation loop.
@@ -726,10 +750,10 @@ def ending_cutscene_mc(mc): # Win condition is dependant on whether challenge 3 
         print("Someone should put that dog on a leash.")
         print('                                     *DING DONG*                                ')
         print('                                     *CREEEEAK*                                ')
-        print(pd._name + ''': "Hello, I have some packages for the owner of 123 Somewhere Street."''')
+        print(mc._name + ''': "Hello, I have some packages for the owner of 123 Somewhere Street."''')
         print('      "Are you the owner?"')
         print('''Homeowner: "Yep, that's right! Wow, you have a nasty rip in your pant leg."''')
-        print(pd._name + ''': "Yeah, neighbourhood dog is out, it seems."''')
+        print(mc._name + ''': "Yeah, neighbourhood dog is out, it seems."''')
         print('''Homeowner: "I always tell my neighbour to put their dog on a leash!"''')
         print('''      "I oughta call the Home Owner's Assocation!"''')
         print('''      "Have a good day!"''')
@@ -813,6 +837,7 @@ if role == "1":
     chapter_2_challenge_pd(pd)
     chapter_3_cutscene_pd(pd)
     chapter_3_challenge_pd(pd)
+    ending_cutscene_pd(pd)
 elif role == "2":
     mc = Mail(character_name) # If the role selected was Mail Courier, a Mail Courier object is created.
     chapter_1_cutscene_mc(mc)
@@ -821,4 +846,5 @@ elif role == "2":
     chapter_2_challenge_mc(mc)
     chapter_3_cutscene_mc(mc)
     chapter_3_challenge_mc(mc)
+    ending_cutscene_mc(mc)
 
